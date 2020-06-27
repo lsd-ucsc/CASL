@@ -1,3 +1,20 @@
+# Summer 2020 CASL reading group
+
+## What's all this, then?
+
+CASL (pronounced "castle") is organizing a reading group this summer.  We'll meet on Fridays, 11:30am-12:30pm, each week of summer quarter, via Zoom (ask a CASL person to forward you the Zoom link if you need it).  All are welcome to participate.
+
+If you show up to reading group, be ready to participate in the discussion!  If more than 5 people attend, for the first part of the meeting we'll use Zoom breakout rooms to create smaller (3-4 person?) conversation groups to promote active discussion.  Then we'll reconvene as a full group to summarize the small-group discussions.
+
+To structure our discussions, here are four questions I suggest we ask ourselves for each paper we read.  Note that, while all of them require reading some of the paper, none of them require reading all of the paper. (Lindsey got the idea to use this list of questions from Chung-chieh Shan.)
+
+1. What's the paper about?
+2. What's one thing I learned?
+3. What's one question I'm curious about?
+4. What's one step I can take towards answering the question?
+
+## Schedule of readings
+
 This list is tentative and subject to change.
 
 * June 26
