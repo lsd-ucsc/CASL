@@ -2,7 +2,87 @@ These are paraphrased notes from a live discussion with several people.
 Parenthesis are used where the paraphrasing is particularly distant from what
 the speaker said. Feel free to edit these notes as you see fit.
 
+# 2020-07-03, paper discussion
+
+## Week 2 for [Verifying Strong Eventual Consistency in Distributed Systems](https://dl.acm.org/doi/10.1145/3133933) by Gomes et al. (OOPSLA '17)
+
+* lindsey: since we have fewer people, we don't need breakout groups this time
+* lindsey: let's start with the sections we didn't get to last time, such as
+  section 5
+    * lindsey: for structure, here are the questions again:
+        2. What's one thing I learned?
+        3. What's one question I'm curious about?
+        4. What's one step I can take towards answering the question? 
+    * lindsey: can anyone answer question 2?
+        * gan: i liked how they formalized the system [lindsey: starting in
+          section 4? gan: yes]
+        * gan: a system has a state, and an interpret function :: input ->
+          state -> state
+        * patrick: i like the way they prove commutative, with a reordering of
+          composition of klesli composition
+        * kamala: [typist couldn't keep up]
+    * kamala: it seems that distinctness of message ids in the network is
+      required to prove that RGA operations commute
+        * sec 6.2: "it is straightforward to demonstrate that delete..."
+        * lindsey: [describing distinction between RGA and OT]
+            * ot transforms the indexes specified in operations
+            * RGA requires unique identifiers on all elements
+        * patrick: [comment about UMD paper using UUIDs on causal tree]
+            * lindley: i think the author of causal tree said that it's the
+              same as RGA
+        * lindsey: is kamala's question about message IDs or element IDs?
+            * kamala: [typist couldn't keep up]
+            * lindsey: if you want to refer to messages, you end up needing a
+              unique identifier
+            * lindsey: in the RGA section they say RGA requires the total order
+              of IDs to be consistent with causality, and they're using Lamport
+              clocks rather than vector clocks 
+                * patrick: i think that's a flattened version of causal tree,
+                  where in causal tree you're pointing toward the thing that
+                  comes causally after
+            * lindsey: the RGA paper is comprehensive, moreso than the original
+              CRDT paper .. it's difficult to demonstrate that RGA is a CRDT
+            * lindsey,patrick: [typist couldn't keep up]
+            * lindsey: the formal definition of CRDTs is neither necessary nor
+              sufficient for people to get work done
+* lindsey: the shorter, more dense, paper we're reading next week will shed
+  light on CRDTs; causal delivery is neither necessary nor sufficient for CRDTs
+  in general; when do you need it and when do you need something else?
+* kamala: coming back to the delete-commute thing: i think that the reason i
+  made this note is because
+    * kamala: when you delete an element it has to be unique; you don't have a
+      a number of inserts on the same element, you can only have one
+    * lindsey: it also only delete's the first element which matches, so there
+      better be only one
+* farhad: i've been reasoning about operations on a shared state accessed by
+  different processes, and how/when they're compatible with eachother
+    * farhad: i've made some progress by paying more attention to the network
+      model
+    * farhad: [typist couldn't keep up]
+    * lindsey: none of the CRDTs here map completely onto what you're trying to do
+
+* lindsey: patrick do you have a question "3. What's one question I'm curious
+  about?"
+    * patrick: cocurrent-ops-commute question
+* lindsey: there's a section where they say "additional requirements regarding
+  the contents of messages that cannot be expressed in isabelle's type system"
+* gan: in section 8, they mention that "to make a system converge you can use
+  last write wins"
+    * [typist couldn't keep up]
+    * lindsey: cassandra used plain old timestamps in 2013, which lead to
+      obvious problems
+    * lindsey: let's assume those clocks agree to a high resolution
+    * lindsey: cassandra was also rounding clock values from milliseconds to
+      hundredths of a second, leading to more time conflicts
+    * lindsey: then, if the operations conflict, it just picked the
+      lexicographically higher value
+    * lindsey: so that's why we need to have some notion of what users want, in
+      the form of a guarantee that writes don't get lost
+[rest of discussion was not transcribed]
+
 # 2020-06-26, paper discussion
+
+## Week 1 for [Verifying Strong Eventual Consistency in Distributed Systems](https://dl.acm.org/doi/10.1145/3133933) by Gomes et al. (OOPSLA '17)
 
 * lindsey: goal of the summer reading group is to read papers relevant to CASL,
   consistency aware solvers and languages
