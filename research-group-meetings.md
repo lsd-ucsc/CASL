@@ -1,3 +1,90 @@
+# 2020-07-10, group meeting
+
+* linsey: let's talk about gan+patrick's pair programming project
+    * gan: we're trying to figure out how to implement an editor
+    * patrick: churning between 2d representation of editor content and 1d
+      representation of editor content
+    * lindsey: i had roommates/friends who wanted to implement a collaborative
+      editor, and learn haskell.. they were implementing in a modular way, with
+      a plugin system, where plugins could change the behavior of keystrokes..
+    * patrick: we're going for a minimal approach for exploring collaborative
+      editing
+    * gan: for this week, i implemented RGA, and now i understand it better..
+      in gomes-et-al they said that the unique ids must [correspond to
+      causality].. in short, this guarantees that concurrent inserts are
+      commutative..
+    * patrick: can you use a uuid and sort by that and still satisfy this
+      requirement?
+    * [more discussion, typist couldn't keep up]
+    * gan: here's a link to the RGA impl
+      <https://github.com/lsd-ucsc/editor/blob/interpret/src/CRDT/RGA.hs>
+* lindsey: did you look at the original paper, or in gomes-et-al?
+    * gan: gomes-et-al
+    * lindsey: the thing about "RGA requires the IDs to reflect the total order
+      of causality" was news to me when reading the gomes-et-al paper [typist
+      couldn't keep up]
+    * lindsey: there's a similar thing in the amazon dynamodb paper, which they
+      don't make explicit, but they do use vector clocks to determine order of
+      events, to reduce the number of causal anomalies
+    * lindsey: the RGA requirement is similar
+* lindsey: in undergrad dist sys class, we discuss different kinds of logical
+  clocks relationships and being "consistent with causality"
+    * lamport clocks give you one direction but not the other [typist could not
+      keep up]
+* lindsey: hi farhad!
+    * farhad: this similar to last week's paper, but you can define the
+      consistency model
+    * lindsey: this paper is more general, because it allows examining a
+      variety of consistency models
+    * lindsey: the other major difference, is the automated aspect of this
+      paper, it can be done with z3
+    * lindsey: whereas with the gomes paper, more is done by hand,
+      mechanised-proof-assistant, rather than a theorem prover; but also the
+      set of assumptions in the gomes paper is very small, you start with a
+      small set of axioms
+* lindsey: with the cav19 paper, there's a lot of math that's done outside
+  of the theorem prover to establish ...
+* lindsey: [typist couldn't keep up] the whole idea was checking
+  "noninterference to commutativity" (NTC) against a given consistency property..
+  this part is automated
+* lindsey: is it actually the case that NTC implies SEC? that's what they
+  proved on paper, and that's their primary contribution
+    * lindsey: the gomes paper [throws shade on] these efforts that use
+      proofs outside of ITP or ATP tools
+    * lindsey: there make be bugs in the NTC->SEC proofs
+    * lindsey: there's a paper about this issue, called "run your
+      research" <https://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1236&context=csse_fac>
+    * lindsey: PLT redex will let you write down your language
+      specification and get an implementation; "lightweight mechanization"
+      lets you find bugs in your math easily (lightweight because you're
+      not proving anything)
+    * lindsey: this cav19 paper, i don't know if redex would have been an
+      appropriate tool, but this paper is almost not PL; it's like a big
+      transition system
+    * gan,farhad,patrick,lindsey: there aren't enough examples of the
+      transition system, they change from their signature in the
+      "illustrated examples" section to another
+* lindsey: there's different ways to view this paper
+    * lindsey: we could take you at your word that theorem 1 is true, treat it
+      as a black box, and then build on top of it
+    * lindsey: another way to use this paper, would be to try to understand
+      their proof technique, by digging in more deeply
+    * lindsey: another thing to keep in mind is that the CAV audience,
+      which is distinct from a PL or a dist-sys audience
+    * lindsey: eg. contrast with the original CRDT paper, which discusses
+      replicas; it's very common to discuss replicas in a dist-sys conference;
+      if you're going to talk about replicas, you need to have a fixed number
+      or have some affordance for replicas to leave and join
+    * lindsey: none of that is part of [the cav19] formalism; they don't have
+      any of that, they have a big transition system with a "soup" of things
+      that are happening .. and use some [paraphrased: weedle words/phrases] to
+      relate it back to [the concrete]
+    * patrick: is that a weakness? i didn't notice because i don't know what's
+      standard
+    * lindsey: not a weakness, it's a choice.. it's our job as researchers to
+      be aware of these choices; be aware that they made the choice not to talk
+      about replicas
+
 # 2020-07-03, group meeting
 
 * lindsey: proof left undone in the UMD LH paper is for the causal tree
