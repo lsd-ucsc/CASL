@@ -1,6 +1,6 @@
 These are paraphrased notes from a live discussion with several people.
-Parenthesis are used where the paraphrasing is particularly distant from what
-the speaker said. Feel free to edit these notes as you see fit.
+Parenthesis or brackets are used where the paraphrasing is particularly distant
+from what the speaker said. Feel free to edit these notes as you see fit.
 
 # 2020-07-10, paper discussion
 
