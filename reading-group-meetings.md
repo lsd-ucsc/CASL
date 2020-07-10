@@ -4,7 +4,7 @@ the speaker said. Feel free to edit these notes as you see fit.
 
 # 2020-07-10, paper discussion
 
-## Week 1 for [Automated Parameterized Verification ofCRDTs (Extended Version)](https://www.cs.purdue.edu/homes/suresh/papers/cav19.pdf)
+## Week 1 of 1 for [Automated Parameterized Verification ofCRDTs (Extended Version)](https://www.cs.purdue.edu/homes/suresh/papers/cav19.pdf)
 
 * lindsey: what was your takeaway for what this paper was about?
     * patrick: [vague answer]
@@ -132,7 +132,7 @@ the speaker said. Feel free to edit these notes as you see fit.
 
 # 2020-07-03, paper discussion
 
-## Week 2 for [Verifying Strong Eventual Consistency in Distributed Systems](https://dl.acm.org/doi/10.1145/3133933) by Gomes et al. (OOPSLA '17)
+## Week 2 of 2 for [Verifying Strong Eventual Consistency in Distributed Systems](https://dl.acm.org/doi/10.1145/3133933) by Gomes et al. (OOPSLA '17)
 
 * lindsey: since we have fewer people, we don't need breakout groups this time
 * lindsey: let's start with the sections we didn't get to last time, such as
@@ -210,7 +210,7 @@ the speaker said. Feel free to edit these notes as you see fit.
 
 # 2020-06-26, paper discussion
 
-## Week 1 for [Verifying Strong Eventual Consistency in Distributed Systems](https://dl.acm.org/doi/10.1145/3133933) by Gomes et al. (OOPSLA '17)
+## Week 1 of 2 for [Verifying Strong Eventual Consistency in Distributed Systems](https://dl.acm.org/doi/10.1145/3133933) by Gomes et al. (OOPSLA '17)
 
 * lindsey: goal of the summer reading group is to read papers relevant to CASL,
   consistency aware solvers and languages
