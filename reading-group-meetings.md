@@ -4,7 +4,7 @@ from what the speaker said. Feel free to edit these notes as you see fit.
 
 # 2020-07-10, paper discussion
 
-## Week 1 of 1 for [Automated Parameterized Verification ofCRDTs (Extended Version)](https://www.cs.purdue.edu/homes/suresh/papers/cav19.pdf)
+## Week 1 of 1 for [Automated Parameterized Verification of CRDTs (Extended Version)](https://www.cs.purdue.edu/homes/suresh/papers/cav19.pdf)
 
 * lindsey: what was your takeaway for what this paper was about?
     * patrick: [vague answer]
