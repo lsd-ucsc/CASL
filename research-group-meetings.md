@@ -51,9 +51,11 @@
   proved on paper, and that's their primary contribution
     * lindsey: the gomes paper [throws shade on] these efforts that use
       proofs outside of ITP or ATP tools
-    * lindsey: there make be bugs in the NTC->SEC proofs
+    * lindsey: there may be bugs in the NTC->SEC proofs
     * lindsey: there's a paper about this issue, called [run your
-      research](https://users.cs.northwestern.edu/~robby/lightweight-metatheory/popl2012-kcdeffmrtf.pdf)
+      research](https://users.cs.northwestern.edu/~robby/lightweight-metatheory/popl2012-kcdeffmrtf.pdf),
+      [POPL2012 talk about run your
+      research](https://youtube.com/watch?v=BuCRToctmw0)
     * lindsey: PLT redex will let you write down your language
       specification and get an implementation; "lightweight mechanization"
       lets you find bugs in your math easily (lightweight because you're

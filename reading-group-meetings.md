@@ -125,7 +125,9 @@ from what the speaker said. Feel free to edit these notes as you see fit.
     * lindsey: it's pretty normal that papers will use a summary notation which
       is mostly conventional across papers in figures and text
     * see also [run your
-      research](https://users.cs.northwestern.edu/~robby/lightweight-metatheory/popl2012-kcdeffmrtf.pdf)
+      research](https://users.cs.northwestern.edu/~robby/lightweight-metatheory/popl2012-kcdeffmrtf.pdf),
+      [POPL2012 talk about run your
+      research](https://youtube.com/watch?v=BuCRToctmw0)
 * lindsey: [summary] first technique for proving SEC for CRDTS that is
   parametric on consistency policies and it's an implementation of those
   policies, and it's a rigorous understanding of this relationship between
