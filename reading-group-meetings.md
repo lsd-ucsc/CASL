@@ -124,7 +124,8 @@ from what the speaker said. Feel free to edit these notes as you see fit.
     * lindsey: no, look at the repo for EPR
     * lindsey: it's pretty normal that papers will use a summary notation which
       is mostly conventional across papers in figures and text
-    * see also run your research <https://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1236&context=csse_fac>
+    * see also [run your
+      research](https://users.cs.northwestern.edu/~robby/lightweight-metatheory/popl2012-kcdeffmrtf.pdf)
 * lindsey: [summary] first technique for proving SEC for CRDTS that is
   parametric on consistency policies and it's an implementation of those
   policies, and it's a rigorous understanding of this relationship between
