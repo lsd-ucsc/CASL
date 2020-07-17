@@ -174,9 +174,10 @@ from what the speaker said. Feel free to edit these notes as you see fit.
         * primary/backupchained replication
             * splitting reads and writes up
         * chained replication
+          <https://www.cs.cornell.edu/home/rvr/papers/OSDI04.pdf>
             * splitting reads and writes up by responding attention to the mix
               of gets and puts
-
+        * see also <http://usenix.org/event/usenix09/tech/full_papers/terrace/terrace.pdf>
 
 # 2020-07-10, paper discussion
 
