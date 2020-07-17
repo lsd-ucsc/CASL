@@ -2,6 +2,182 @@ These are paraphrased notes from a live discussion with several people.
 Parenthesis or brackets are used where the paraphrasing is particularly distant
 from what the speaker said. Feel free to edit these notes as you see fit.
 
+# 2020-07-17, paper discussion
+
+# Week 1 of ... for [Chapar: Certified Causally Consistent Distributed Key-Value Stores by Lesani, Bell, and Chlipala (POPL '16)](https://www.cs.ucr.edu/~lesani/companion/popl16/POPL16.pdf)
+
+* lindsey: coming back to this paper after not reading it for a long time, and
+  knowing now that i care about different things than i did in the past, i have
+  some thoughts
+* lindsey: let's talk about the introduction
+    * the nice emoji-laden diagrams demonstrate with crossed arrows not only a
+      violation of causal consistency, but also FIFO or P-RAM consistency
+      (pipelined ram)
+    * this is a nice way to talk about it, but instead of talking about events,
+      here we're talking about key-value stores
+    * the arrows in the diagram could be thought of not as message sends, but
+      rather as representing when updates from a replica get applied at another
+      replica
+    * the crossed arrows are an easy tell that this is a violation of those
+      consistency schemes
+* lindsey: they define two kinds of depenedncies which are similar to the
+  classic cases described in causal consistency
+    * "node-order" or "process-order" or "session-order" or "execution thread"
+      dependency
+    * "causal" or "gets-from" dependency
+    * "transitive" dependency
+* lindsey: how do they put the pieces (from figure 3) together?
+    * lindsey: *concrete operational semantics* (COS) -- fig 6; something you
+      plug a particular k/v implementation in; provides no guarantees; message
+      order is arbitrary, messages might not be delivered
+        * lindsey: describes transitions on a "world" which includes all the
+          state (H, T) written as "H x T"
+        * lindsey: describes state transitions from old (H, T) -> new (H, T)
+            * H is (node-id -> program-statement, map)
+            * etc..
+        * the thing to notice is that the COS doesn't rule out anything
+        * patrick: so this is defining all possible behaviors in the domain we
+          care about, without defining anything about what's correct
+        * lindsey: you could even think of it as modeling the network layer,
+          because it puts no restrictions on the behavior; all kinds of badness
+          could occur
+    * lindsey: *abstract operational semantics* (AOS) -- fig 7, they don't have
+      any notition of messages; it's almost like shared memory
+        * gan: it's kind of like updates [patrick: i think gan is referring to
+          cav19]
+        * lindsey: it's sort of like the transition system of the cav19 paper
+        * lindsey: re, patrick's question about this: this just means that the
+          COS had a notion of messages, the set of in-transit messages, but the
+          AOS doesn't; it just describes how a clock get updated when a put
+          happens
+            * patrick: so the AOS is only modeling what is correct, and so it
+              doesn't need to model incorrect behaviors
+        * lindsey: notice the COS is modeling "executions with node crashes and
+          message losses" in in contrast; also this is notable, because many
+          papers don't model those things
+            * patrick: what's the language this is all written in
+            * lindsey: metatheory, they don't make it explicit
+            * lindsey: notice the labels above the transition rules (---->_c),
+              those generate a trace which is stored (like logging info) and
+              can be reflected on later to check for assertion fails
+            * lindsey: the trace is something that they write down theorems
+              about; as an example, theorem 1 describes how program 1 and
+              implementation 1 execute with the COS (---->_c) and won't
+              encounter an assertFail [but this is specific to program 1 and
+              implementation 1]
+            * gan: this raises the question about whether program 1 (or any
+              program) has assertions in the right place
+            * lindsey: patrick asked about a program that contains only
+              "assertFail.."
+            * lindsey: those programs wouldn't fit the *causally content*
+              definition, and [the other proof stuff wouldn't apply
+              (paraphrased)]
+        * lindsey: a section of this paper that i missed when i read it before,
+          is that [there is checking of client programs]
+        * lindsey a lot of this paper is trusting that the AOS is correct
+            * gan: yes, i wanted to ask that
+            * patrick: is there a proof of that outside of the paper?
+            * lindsey: they don't; figure 7 (AOS) is the spec.. and the paper
+              proves that implementations satisfy the spec; all verification
+              has the problem of whether the spec is correct
+            * gan: this paper is is like running two sorting algorithms and
+              seeing if their output is the same (proving correspondence)
+            * gan: another analogy is to check if outputs are sorted (proving
+              directly)
+            * [typist couldn't keep up]
+            * lindsey: they wrote down the AOS; is it correct?
+            * patrick: oh, so at popl there was a presentation of a verified C
+              compiler, and the approach was to start with a spec and prove
+              correspondence
+            * gan: yeah, you have to start from somewhere
+            * patrick: can you prove the AOS from some simpler axioms or
+              something?
+            * gan,lindsey: you have the same problem, in a smaller base, at
+              some point you need proof
+            * gan: everybody reading the poper is the proof that it's a valid
+              definition
+        * lindsey: [typist couldn't keep up] proving output labels here
+          correspond to output labels of AOS, but that's too hard so they
+          define wellrec with a new semantics, which requires its own semantics
+            * then wellrec is defined with cases, and the most important case
+              is discussing node-order dependency and gets-from dependency
+    * lindsey: the thing that bothers people about PL papers, is that it takes
+      so much to say so little; there's so much syntax to write down this
+      relatively simple idea
+        * farhad: many papers redefine and paraphrase other formalizations, and
+          then when going in more depth they need even more notation
+        * linsdey: yeah, guy steel even has a talk about how there are several
+          competing standards of notation about substitution (value for
+          variable in PL)
+        * patrick: could casl push the long proofs from the UMD paper into the
+          SMT solver or theories?
+        * lindsey: you could perhaps start with a LH library of things that are
+          useful to prove things about message queues, etc..
+        * lindsey: SMT theories tend to not get plugged together in practice,
+          instead, people implement the theories together, for a given problem
+            * the combined theories are difficult to write and less efficient
+            * when i looked at theories in SMT, they're not very modular
+            * my hope is that as PL people is that we can figure out how to write
+              these things in a modular way
+            * we should bite off small manageable pieces of the problem
+    * lindsey: who is this for? who is going to read fig 11 and understand it?
+      a very small number of people, possibly us, because we want to go
+      implement well-rec in haskell
+        * gan: i would like to prove myself first, and then reference this when
+          i get in trouble
+        * patrick: i would like to understand LH and the UMD/OOPSLA paper first
+          and then that's my route to here
+    * [typist couldn't keep up]
+    * farhad: can we get a little intuition for well-reception?
+        * lindsey: it starts with bindings and setting up the conjunction of
+          the conditions
+        * farhad: i'd like to a get a gist of it, because this is the main
+          thing that i couldn't understand; why is it a stand-in for proving
+          causal consistency?
+        * gan: it factors out common component
+        * gan: if i were to start implementing this paper, i would start with
+          definition 2 (showing that executions correspond) rather than
+          starting with well-rec
+    * lindsey: one last piece, section 6
+        * lindsey: you might ask "if they were going to do this well-rec thing
+          the whole time, what was the point of the AOS?"
+        * lindsey: it's a symbolic execution engine for seeing whether a
+          client problam asserts failure
+        * lindsey: "they can use this AOS to automatically explore all
+          executions of the client program to see" [whether it's correct]
+        * lindsey: [showing sec3] they call the AOS an interface, distinct from
+          figure 4, to say that, the AOS can be used two ways
+            * as a thing to check client programs
+            * and the other way, as a think to define what it means for a k/v
+              store implementation to be causally consistent
+        * lindsey: this section 6 discusses this idea of symbolic execution
+          (lindsey's term here); they have a thing that generates all possible
+          "schedules" up to a maximum number of steps M; bounded model checking
+    * lindsey: and they they actually have experimental results
+        * lindsey they're trying to show that the extracted code is actually
+          viable
+            * impl 1 is their version of Casual Memory
+              <https://smartech.gatech.edu/bitstream/handle/1853/6781/GIT-CC-93-55.pdf>
+            * impl 2 is their version of this:
+              <http://www.istc-cc.cmu.edu/publications/papers/2013/eiger-nsdi13.pdf>
+        * lindsey notice that algorithm 1 performs worse
+            * they explain overapproximation of dependencies
+            * serialization issues with the vector clock
+
+* discussion of systems/implementation things [how did we get on this topic?]
+    * patrick: at twitch we had a thing that had 10000 RPS for gets and
+      only 100 RPS for puts
+    * farhad: performance is probably application dependent, a distributed
+      diary application (patrick: twitter?) would have many more puts than
+      gets
+    * lindsey:
+        * primary/backupchained replication
+            * splitting reads and writes up
+        * chained replication
+            * splitting reads and writes up by responding attention to the mix
+              of gets and puts
+
+
 # 2020-07-10, paper discussion
 
 ## Week 1 of 1 for [Automated Parameterized Verification of CRDTs (Extended Version)](https://www.cs.purdue.edu/homes/suresh/papers/cav19.pdf)

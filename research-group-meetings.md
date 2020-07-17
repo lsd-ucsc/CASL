@@ -1,3 +1,64 @@
+# 2020-07-17, group meeting
+
+* some paper discussion
+    * lindsey: the chapar paper has two implementations of KV stores
+        * impl 1 is their version of Casual Memory
+          <https://smartech.gatech.edu/bitstream/handle/1853/6781/GIT-CC-93-55.pdf>
+        * impl 2 is their version of this:
+          <http://www.istc-cc.cmu.edu/publications/papers/2013/eiger-nsdi13.pdf>
+            * maybe we should read this paper next week intsead of the "cops"
+              paper?
+    * lindsey: the cops paper claims to be "causal+ consistency" which is
+      supposed to be better
+        * the cops paper came out in 2011, which is when the crdts papers were
+          just coming out
+    * lindsey: also gan pointed out that the AOS (abstract operational
+      semantics) looks just like implementation 2
+        * patrick: i thought all of them were very specific, so as to leave
+          little room in the problem domain
+        * gan: the AOS is already an implementation, it's concrete and you can
+          run it
+    * lindsey: patrick, the first COS is "no holds bars"
+        * there are no clocks
+        * the messages can be delivered, or not, and in arbitrary order
+        * figure 6 COS: rules out nothing, and imposes no constraints
+            * it's required to provide an implementation to see what this means
+        * figure 7 AOS: adds clocks and bakes the kv store into the semantics
+            * this is runnable
+        * figure 9 CIOS: adds the clocks to the COS [typist couldn't keep up]
+            * patrick: used to define well-rec
+    * lindsey: they argue that showing well-rec is easier than showing that
+      "all of the executions that can occur is a subset of the definition all
+      allowed execution"
+* oopsla UMD paper
+    * lindsey: we got all Bs, weak accept (scores are A-D); we wrote a good
+      rebuttle to that
+    * lindsey: the paper is about proving that CRDTs converge using liquid
+      haskell, but we didn't address anything beyond those CRDTs themselves
+    * lindsey: there's a whole lot of other work, that looks at the higher
+      level properties of a particular program that uses CRDTs
+    * lindsey: chapar could be said to be about the higher level properties,
+      because they discuss these assertion failures in client programs and
+      implementations
+    * lindsey: we haven't done anything like that, and the reviewers asked us
+      about whether we could
+    * lindsey: the nice thing about liquid haskell is that we could go ahead
+      and do that in the existing code potentially
+    * lindsey: discussed this a bit with farhad, who is showing that
+      postconditions are true given a sequence of operations [typist couldn't
+      keep up]
+    * lindsey: we should all become more familiar with liquid haskell
+    * farhad: hi! good morning
+* patrick: farhad, use stack even though i don't
+    * gan: stack team here!
+    * patrick: grumbling about fpcomplete and stack
+    * lindsey: formality slider! http://www.cs.cornell.edu/~ross/
+    * lindsey: cabal is the older/lower-level thing, and stack is bulit on top
+      and is easier to use
+    * lindsey: [story about old coworker who's only sticking point was nix
+      being better than other things]
+[continued in paper-reading meeting]
+
 # 2020-07-10, group meeting
 
 * linsey: let's talk about gan+patrick's pair programming project
