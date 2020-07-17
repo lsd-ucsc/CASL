@@ -4,7 +4,7 @@ from what the speaker said. Feel free to edit these notes as you see fit.
 
 # 2020-07-17, paper discussion
 
-# Week 1 of ... for [Chapar: Certified Causally Consistent Distributed Key-Value Stores by Lesani, Bell, and Chlipala (POPL '16)](https://www.cs.ucr.edu/~lesani/companion/popl16/POPL16.pdf)
+## Week 1 of 1 for [Chapar: Certified Causally Consistent Distributed Key-Value Stores by Lesani, Bell, and Chlipala (POPL '16)](https://www.cs.ucr.edu/~lesani/companion/popl16/POPL16.pdf)
 
 * lindsey: coming back to this paper after not reading it for a long time, and
   knowing now that i care about different things than i did in the past, i have
