@@ -3,7 +3,7 @@
 * lindsey: should we buy slack? our free slack loses old messages (though, if
   we pay, we get them back) [patrick: eg. the advice about when to read papers
   or what classes to sign up for..?]
-    * patrick: [slack is not organizational memory](...); i like the artificial
+    * patrick: [slack is not organizational memory](https://abe-winter.github.io/plea%27s/help/2018/02/11/slack.html); i like the artificial
       pressure we have now to intentionally document things we care about; we
       could also make a bot to put our messages in a repo
     * lindsey: how should we do this?

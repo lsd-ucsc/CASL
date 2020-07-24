@@ -2,6 +2,59 @@ These are paraphrased notes from a live discussion with several people.
 Parenthesis or brackets are used where the paraphrasing is particularly distant
 from what the speaker said. Feel free to edit these notes as you see fit.
 
+# 2020-07-24, paper discussion
+
+## Week 1 of ? for [Don't Settle for Eventual: Scalable Causal Consistency for Wide-Area Storage with COPS by Lloyd et al. (SOSP '11)](https://www.cs.cmu.edu/~dga/papers/cops-sosp2011.pdf)
+
+* lindsey: what did you think of it? picking on patrick
+    * patrick: it was vague, and didn't formalize sufficiently; i like the
+      attention to real network constraints, such as clusters that communicate
+      and wider area networks that don't, and the fact that they don't rely on
+      broadcast
+    * lindsey: last year's spec for the DKVS project essentially specified the
+      exact COPS-GT way of tracking causal ordering
+    * lindsey: how are they claiming scalability?
+    * patrick: i think they're comparing apples and oranges; CBCAST is a
+      message ordering protocol, not a k/v store and doesn't require a
+      full-replica
+    * lindsey: maybe they were referring to ISIS (the system that CBCAST is
+      used to implement) which is used in the french air traffic control system
+    * gan: and in the chapar paper, they pointed out that CBCAST using vector
+      clocks, was an overapproximation, and was more ordered, than it needed to
+      be; and then in the cops paper, the data showed that the CBCAST
+      implementation [wasn't as good as] the [other systems?]
+* lindsey: they also say that other systems that provide this consistency
+  level, were designed such that there was a single "serialization point"
+    * in sec 3.4, they discuss alternative systems and say that a "logical
+      replica" has a single serialization point
+    * "a single serialization point" for a "logical replica" (in list case, a
+      COPS) is a scaling bottleneck
+    * "the composability of linearizability ensures that the resulting system
+      is lineearizable as a whole"
+* lindsey: it's a very challenging task to try to describe a system in a way
+  that brings the important ideas to the forefront, while still being precise
+  about what the system does
+* lindsey: let's talk about the "plus" part of "causal+"
+    * lindsey: even if you have causal consistency, you could have replicas
+      that diverge forever
+    * gan: a partial order is not a total order
+    * lindsey: they want an extra piece, but the way the implement it with LWW,
+      using the node-id in the lamport clock
+    * patrick: it's consistent!
+    * lindsey: they don't enforce the conflict resolution function being
+      associative and commutative
+    * lindsey: next week's paper is a followup to COPS, called Eiger, but it
+      doesn't have any more sophistication in conflict resolution
+* lindsey: one of the reasons i wanted to read this paper is because they built
+  this system, deployed it on several servers, and spent 25% of the paper to
+  evaluate the system
+    * patrick: can we do both in one system?
+    * lindsey: we should hope! and OOPSLA and PLDI are those kinds of
+      conferences, and in the chapar paper they did run their system
+* lindsey: intermediate languages for verification is not a new idea; "boogie"
+  is an intermediate language which you can target from any Microsoft CLR
+  language [gan: eg. daphne]
+
 # 2020-07-17, paper discussion
 
 ## Week 1 of 1 for [Chapar: Certified Causally Consistent Distributed Key-Value Stores by Lesani, Bell, and Chlipala (POPL '16)](https://www.cs.ucr.edu/~lesani/companion/popl16/POPL16.pdf)
