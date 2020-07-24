@@ -41,11 +41,11 @@ This list is tentative and subject to change.
     
 * July 31
 
-    [Replication-Aware Linearizability](https://www.irif.fr/~cenea/papers/ra-lin-pldi19.pdf) by Wang et al. (PLDI '19)
+    [Stronger Semantics for Low-Latency Geo-Replicated Storage](https://www.usenix.org/system/files/conference/nsdi13/nsdi13-final149.pdf) by Lloyd et al. (NSDI '13)
 
 * August 7
 
-    TBD
+    [Replication-Aware Linearizability](https://www.irif.fr/~cenea/papers/ra-lin-pldi19.pdf) by Wang et al. (PLDI '19)
     
 * August 14
 
