@@ -1,3 +1,122 @@
+# 2020-07-24, group meeting
+
+* lindsey: should we buy slack? our free slack loses old messages (though, if
+  we pay, we get them back) [patrick: eg. the advice about when to read papers
+  or what classes to sign up for..?]
+    * patrick: [slack is not organizational memory](...); i like the artificial
+      pressure we have now to intentionally document things we care about; we
+      could also make a bot to put our messages in a repo
+    * lindsey: how should we do this?
+    * patrick: patrick what about pinning messages? i don't know of the limits
+    * lindsey: there's also zulip; we could export the slack history to zulip
+    * lindsey: concerned about fragmentation
+    * farhad: i don't mind switching, i'm trying to think of suggestions
+    * lindsey: we could even use a slackbot command to trigger archiving things
+        * farhad: i like that idea
+        * patrick: auth might be hard
+    * farhad: if we go [with a bot to archive messages], i have a
+      suggestion/question.. how would we structure things in the repo so there
+      can be tags?
+        * patrick: if we build it, we can decide
+* lindsey: talk about PLMW; let's apply!
+    * lindsey: we're unsure about how many people to let in, because the
+      constraints are different from previous years
+    * lindsey: we're usually constrained by venue, and by cost (PLMW covers
+      the cost of attending the conference for some attendees)
+    * lindsey: in the recent PLMW at PLDI, it was the biggest ever, with many
+      participants watching the live stream
+    * farhad: when is the deadline to apply?
+    * lindsey: august 8
+* lindsey: let's talk about Farhad's project
+    * lindsey: you're all familiar with Matthew's project, Gallifrey (sp?)
+      where they have a language where you can put annotations on operations on
+      data; eg. you can put preconditions and postconditions on operations
+      (specifies what must be true beforehand, REQUIRES, and what will be true
+      afterward, ENSURES)
+    * lindsey: this is similar to the sort of thing that was done in the indigo
+      paper [V Balegas, S Duarte, C Ferreira, R Rodrigues, Putting consistency
+      back into eventual consistency (EuroSys
+      2015)](https://hal.inria.fr/hal-01248191/document)
+        * [typist couldn't keep up]
+        * indigo statically analyzes an application to tell you when operations
+          are in conflict with eachother, so that you know which need some kind
+          of synchronization (such as addition of pre and post coditions) and
+          which do not
+        * the paper is hard to understand; it is not a PL paper, it is a
+          systems paper; they don't write down a semantics of how the
+          annotations are evaluated; they don't write down a syntax
+        * there's a notion of an effect, and there's clearly state being
+          manipulated; the state is implicit
+    * lindsey: farhad's project is similar, in that it's a smaller version of
+      something like indigo; putting annotations on operations and writing down
+      invariants; making calls to a solver to analyze operations and find out
+      which are in conflict
+    * **farhad sharing screen** ![a run on a simple
+      class](static/farhad-gallifrey-work.png)
+        * lindsey: prelude; there's an open source implementation of indigo,
+          which matthew tried to understand; the implementation is large,
+          complex, and not well documented; eventually we determined to
+          implement our own thing; that's what farhad is doing; it's in java;
+          it interacts with z3; the hope is that we can implement a
+          stripped-down version of indigo which can be integrated into
+          gallifrey (sp?); another goal would be to have a more formalized
+          explication of what this is and how it works for a PL audience
+        * farhad: the main thing i've learned in this project is about how to
+          excplicitly reason about the implicit stuff [lindsey: yes, the indigo
+          paper leaves even more unsaid than i thought]
+        * patrick: are we in contact with the authors of the indigo paper?
+        * lindsey: not yet; we haven't reached out; i know some of the authors,
+          but the paper is 5 years old now
+            * lindsey: it is often hard to replicate somebody else's work
+        * farhad: here's an example of a class with some operations, we want to
+          check that when these operations used concurrently, don't conflict
+            * farhad: there's a gallifrey (sp?) annotation that specifies pairs
+              of operations to check for conflicting behavior
+            * farhad: the way we reason about whether conflicts can happen is,
+              given a state, when an operation is called [typist could not keep
+              up]
+        * gan: is there any verification that the code matches the spec?
+            * lindsey: no, this assumes the specs describe the code correctly
+            * patrick: is the a need here for a toy language which generates
+              both the code and the annotations to ensure that they correspond?
+            * lindsey: in the [hyperkernel
+              paper](https://unsat.cs.washington.edu/papers/nelson-hyperkernel.pdf),
+              they have an intermediate specification
+                * lindsey: **sharing figure 2 of the paper**, they have to show
+                  that each layer (declarative spec, state-machine spec,
+                  implementation) correspond
+                * lindsey: by splitting things out, it was easier to facter out
+                  things that could be automated from things that could not; if
+                  we ever get to the point of verifying that these annotations
+                  are the right annotations for the code, this is an approach
+                  we might consider
+        * farhad: so during the run, it checks if the operations conflict if
+          run concurrently
+            * farhad: so in this example, it's showing that the `withdraw`
+              operation conflicts with itself
+            * farhad: the way that we try to do this is, there are app
+              invariants (the overall invariants we define above the class),
+              and we generate a sat problem on a relationship between the
+              invariants ![sat formulae](static/farhad-sat-formulae.png)
+            * lindsey: [typist couldn't keep up]; we need to figure out what
+              these `next(..)` semantics are; there's no notion of
+              sequencing/order in these operations; my suspicion is that
+              instead of trying to cram everything into the solver, where
+              implicitly things are running at different [times]; my suspicion
+              is that we'll need to make an analysis that threads through state
+              and calls into the solver as necessary
+            * lindsey: this is also something that seems left out of the indigo
+              paper; it's not a surprise to me that in attempting to implement
+              the indigo paper, we go have stumbled on this problem
+            * gan: as lindsey mentioned, the meaning of this next is a little
+              ambiguous, and i noticed in the editor, it's applied to a
+              variable in one place, and a formula in another place
+            * lindsey: we need to write down the semantics of our analysis are,
+              and figure out where in the analysis we need to call the solver
+            * farhad: [the `next` only "changes" values in context, because the
+              [evaluation?] is call-by-value] ??
+* lindsey: ok, let's talk about the COPS paper for the next 30m..
+
 # 2020-07-17, group meeting
 
 * some paper discussion
