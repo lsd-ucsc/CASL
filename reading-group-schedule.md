@@ -13,7 +13,7 @@ To structure our discussions, here are four questions I suggest we ask ourselves
 3. What's one question I'm curious about?
 4. What's one step I can take towards answering the question?
 
-Some papers to consider might be available on the [CASL reading list](https://github.com/lkuper/haskell-dkvs/wiki/CASL-reading-and-resources), but others are welcome too!
+Some papers to consider might be available on the [CASL group resources](resources.md) list, but others are welcome too!
 
 ## Schedule of readings
 
