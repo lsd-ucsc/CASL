@@ -45,11 +45,11 @@ This list is tentative and subject to change.
 
 * August 7
 
-    [Replication-Aware Linearizability](https://www.irif.fr/~cenea/papers/ra-lin-pldi19.pdf) by Wang et al. (PLDI '19)
+    [Safe Replication through Bounded Concurrency Verification](https://www.cs.purdue.edu/homes/suresh/papers/oopsla18.pdf) by Kaki et al. (OOPSLA '18)
     
 * August 14
 
-    TBD
+    [Replication-Aware Linearizability](https://www.irif.fr/~cenea/papers/ra-lin-pldi19.pdf) by Wang et al. (PLDI '19)
     
 * August 21
 
