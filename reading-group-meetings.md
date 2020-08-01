@@ -2,9 +2,67 @@ These are paraphrased notes from a live discussion with several people.
 Parenthesis or brackets are used where the paraphrasing is particularly distant
 from what the speaker said. Feel free to edit these notes as you see fit.
 
+# 2020-07-31, paper discussion
+
+## Week 1 of 1 for [Stronger Semantics for Low-Latency Geo-Replicated Storage by Lloyd et al. (NSDI '13)](https://www.usenix.org/system/files/conference/nsdi13/nsdi13-final149.pdf) (aka COPS2)
+
+* lindsey: should we discuss cops2 or indigo stuff more?
+    * gan: tbh i didn't get much for cops2; it feels very similar to cops
+    * lindsey: yeah, this is a followup to cops, and this one got cited by
+      chapar; i got something out of it: patrick remarked it's easier to
+      understand, and i agree; what are the differences? eiger supports a more
+      complex data model
+        * lindsey: it's cool because they are demonstrating that their approach
+          to enforcing causal consistency also works in this scenario
+        * lindsey: if there's one high-level point, it's that you get pretty
+          far with just causal consistency, and only certain things need strong
+          consistency
+        * lindsey: i would argue that the consistency model should be a
+          property of the request
+        * lindsey: the paper shows that you can have causal consistency at
+          scale, and so we should focus on the space between causal consistency
+          and strong consistency
+        * lindsey: for 2005-2012 or so, people felt that you need weaker
+          consistency models; since then it's become clearer that reasonably
+          strong consistency is possible
+        * lindsey: there's a paper [cause i'm strong
+          enough](https://pages.lip6.fr/Marc.Shapiro/papers/CISE-POPL-2016.pdf);
+          at the time i thought it was weird because causal-consistency seemed
+          strong, but chapar/cops2/cise all make the case that
+          causal-conistency is a baseline
+        * patrick: so if causal-consistency is the sweet spot, and we're
+          looking north of that, would a valuable contribution be to find a new
+          sweet spot between causal-consistency and strong consistency?
+            * lindsey: yes, but some of that is going to be up to the needs of
+              applications
+        * patrick: is it valuable to think about different implementations and
+          understanding their tradeoffs?
+            * lindsey: yes
+                * lamport: dependencies between send and receive events
+                * cbcast: dependencies between clock-values on messages
+                * cops: dependencies between versions of values
+                * cops2: dependencies between operations
+        * lindsey: the application specific constraints on top of
+          causal-consistency, such as `bank-balance>=0` or
+          `0<tournament-participants &&
+          tournament-participants<=max-participants`
+            * patrick: these constraints make the consistency model stronger
+              than causal-consistency, but should we care about them?
+            * lindsey: yes, but they don't define a new consistency model
+            * farhad: most of the applications we've looked at is that most of
+              the applications assume causal-consistency
+            * lindsey: the cav19 paper with crdts shows that we don't always
+              need this baseline though
+            * lindsey: in the UMD/OOPSLA paper they made that argument, and
+              said it's ok because of the proof of commutativity, but the ad
+              hoc nature of the guarantees may be application specific
+        * lindsey: i got into crdt research because the math is interesting,
+          but maybe we should be into it to empower people
+          <https://twitter.com/martinkl/status/1288836873482379266>
+
 # 2020-07-24, paper discussion
 
-## Week 1 of ? for [Don't Settle for Eventual: Scalable Causal Consistency for Wide-Area Storage with COPS by Lloyd et al. (SOSP '11)](https://www.cs.cmu.edu/~dga/papers/cops-sosp2011.pdf)
+## Week 1 of 1 for [Don't Settle for Eventual: Scalable Causal Consistency for Wide-Area Storage with COPS by Lloyd et al. (SOSP '11)](https://www.cs.cmu.edu/~dga/papers/cops-sosp2011.pdf)
 
 * lindsey: what did you think of it? picking on patrick
     * patrick: it was vague, and didn't formalize sufficiently; i like the

@@ -1,3 +1,115 @@
+# 2020-07-31, group meeting
+
+* deniz is joining meeting
+    * deniz: i'm working at google, in the databases team, on distributed
+      systems, phd from cornel, previously worked on consensus
+    * lindsey: deniz is our advocate at google for this project; many thanks
+    * deniz: if you want, i can tell you a little about what happens behind the
+      scenes
+    * deniz: many applications; but use "hot crp" like a conference, committees
+      based on peoples expertise; as with conference, cut down to a short list
+      of submissions; award doesn't have deliverables; try to award high
+      quality work that's not previously funded
+    * lindsey: indeed, not yet funded by the NSF
+* lindsey: intros
+    * patrick: starting at UCSC now; working with gan to verify dkvs using LH,
+      refinement types are predicates of values enforced at compile time, also
+      worked with LH people on oopsla submission
+    * gan: starting this fall at UCSC; collaborated to build dkvs; learning LH
+      and reading papers about verification of consistency
+    * deniz: is the idea that you build the KV store with haskell and then add
+      verification?
+        * lindsey: yes; often build something without running code; with LH we
+          build implementation and add verification
+        * lindsey: the technique used to embed LH in the language is in
+          principle applicable to other languages
+        * deniz: there's a project at cornell doing something similar with
+          java, but less focused on verification
+    * farhad: i'm working on a project with Matthew M from Cornell called
+      Gallifrey (sp?) inspired by Indigo, to check if operations on shared
+      state conflict with eachother [w.r.t invariants]
+        * lindsey: the underlying thread is that these two projects use an stm
+          solver under the hood; LH uses z3 to verify the predicates on types;
+          Gallifrey uses z3 to check for violations of pre/post conditions on
+          the Java operations lindsey: more on the project
+    * lindsey: limitations in the solvers underlying these systems sometimes
+      crop up, and so one future exploration would be to use custom solvers [to
+      solve these problems more closely]
+        * lindsey: during my work at intel on verification of neural networks
+          the team needed to build a custom solver because the off-the-shelf
+          solvers have certain limitations; building a domain-specific solver
+          is a new thing
+        * lindsey: the bridge between distributed systems and solvers is a new
+          area that doesn't have much academic collaboration
+    * lindsey: at intel i funded some projects, and the amount of interaction
+      was not consistent; i'd like to leave it up to you the level which you'd
+      like to be involved in the project
+        * deniz: same, sometimes the other side wants more or less involvement
+        * deniz: the things that i can help with: if you want to test on google
+          cloud, or if you want to meet on a schedule, and i can provide you
+          with feedback, or if you want to understand the things that google
+          [computing at scale] care about w.r.t. tradeoffs, or if you're
+          interested in internships we can talk about that and the kinds of
+          projects available
+        * deniz: meeting/collaboration doesn't have to be limited to the
+          timeline of the award
+* farhad: [sharing screen for demo]
+    * farhad: classes, operations, invariants, and restrictions
+    * farhad: our goal is to find conflicts between operations
+    * farhad: [demo; discussion of particular invariants/formulae/relation
+    * lindsey: this is supposed to be used in the context of a replicated
+      system; also the generation and modification of invariants is a
+      presentation from indigo but is slightly unusal
+    * lindsey: a "tournament example" -- a tournament allows 5 players, and
+      there are currently 4 signed up, at two separate replicas, 1 additional
+      player signs up simultaneously, for a total of 6; how does the store
+      resolve the two distinct signups?
+    * [typist couldn't keep up]
+    * deniz: why is the invariant checking done [in the peculiar way] [lindsey:
+      with substitution into the invariant]?
+        * lindsey: it's strange; this paper came from the systems community,
+          not the verification community; it works, but it's a little hard to
+          reason about; we don't have to do the same implementation?
+* deniz: if you're interested in internship next summer, the time to be
+  thinking about it is now, and the time to interview is sept/oct
+    * [deniz signed off]
+* lindsey: i've been talking with friend james wilcox about the indigo paper;
+  he got nerd sniped
+    * lindsey: should we discuss cops2 or indigo stuff more?
+    * **a brief discussion of the paper followed** [see the paper-reading meeting doc]
+* lindsey: let's talk about james wilcox research
+    * there's a tool from MSR (microsoft research) called IVY for verification
+      of distributed systems which <http://microsoft.github.io/ivy/>
+    * james has a tool that looks like python which is similar
+      <https://github.com/wilcoxjay/mypyvy>
+        * it's a thin layer over smt solvers with the ability to discuss
+          transitions
+        * [lindsey showing the tournament example]
+            * define two types, player and tournament
+            * define binary relations, eg enrolled(player, tournament)
+              implicitly typed as bool
+            * define functions
+            * define initial states as relations and functions foralls
+            * define transitions [lindsey: key feature, which is also present
+              in the daphne language]
+                * new(..) is like the next in farhad's work
+                * <-> is iff or definition
+                * the | bar reads as "or" which is kind of like set union
+                * the new(..) on the LHS of the iff is a marker that tells you
+                  things are postconditions, and the lack of a new(..) is a
+                  postcondition
+                    * indigo paper infers preconditions
+                    * ivy and mypyvy do not infer it, but there's guidance from
+                      the automated tool
+            * define invariants, which are the things you want to guarantee are
+              true, and then the system will figure out if that's true
+                * first it will pick an invariant
+                * then it will assume all the invariants are true
+                * then it will pick a transition and check if the invariant
+                  remains true
+        * lindsey: daphne allows you to write verification conditions that can
+          be used to check conditions and then generate running code
+
 # 2020-07-24, group meeting
 
 * lindsey: should we buy slack? our free slack loses old messages (though, if
