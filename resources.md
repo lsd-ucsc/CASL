@@ -96,6 +96,8 @@ TODO: there are lots more LH papers than this.  Some might have lesser or greate
   * M Lesani, CJ Bell, A Chlipala, Chapar: certified causally consistent distributed key-value stores (POPL '16): https://www.cs.ucr.edu/~lesani/companion/popl16/POPL16.pdf
     - Using a proof assistant (Coq) to verify causal consistency of a key-value store
   * A Bouajjani, C Enea, R Guerraoui, J Hamza, On verifying causal consistency, https://arxiv.org/pdf/1611.00580.pdf
+  * ’Cause I’m Strong Enough: Reasoning about Consistency Choices in Distributed Systems: https://pages.lip6.fr/Marc.Shapiro/papers/CISE-POPL-2016.pdf
+    * aka CISE
 
 # Custom solvers that resulted in efficiency improvements
 
