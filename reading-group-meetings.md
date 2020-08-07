@@ -8,10 +8,7 @@ from what the speaker said. Feel free to edit these notes as you see fit.
 
 * lindsey: tough paper, section 5 is particularly dense
     * consider putting off if people haven't read at depth
-        * gan: another week is ok
-        * farhad: yes, i'd like another week
-        * gan: we can talk at a high level about it
-        * lindsey: yes, let's talk about interesting points
+        * [all agree]
 
 [group meeting]
 
@@ -19,16 +16,27 @@ from what the speaker said. Feel free to edit these notes as you see fit.
   operations, is the application safe?
     * the boundedness is what makes it possible to use an SMT solver to explore
       the search space of all concurrent program interleavings
-* lindsey: q9 can discover the consistency level [paraphrased: which is
-  required for a thing to be safe]
+* lindsey: q9 can discover the consistency level [which is required for a thing
+  to be safe]
     * aside on the consistency level meta language
         * first paper that presented the specification language for talking
           about the consistency [of a store; of an operation on a store] was
-          [Replicated Data Types: Specification, Verification, Optimality](...)
+          [Replicated Data Types: Specification, Verification,
+          Optimality](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/replDataTypesPOPL13-complete.pdf)
+          aka "RDTs: SVO"
+            * > When I talk about "The Burckhardt specification language" I
+              mean the thing from these books which lots of people now use.
+              Quelea uses it, Q9 uses it, I think CISE uses it, Viotti and
+              Vukolic use it in https://arxiv.org/abs/1512.00168, , etc.
+            * see also Sohum's blog post about some of the key ideas, [Time is
+              Partial, or: why do distributed consistency models and weak
+              memory models look so similar,
+              anyway?](http://composition.al/CMPS290S-2018-09/2018/11/17/time-is-partial-or-why-do-distributed-consistency-models-and-weak-memory-models-look-so-similar-anyway.html)
         * author then went on to write [Principals of Eventual
-          Consistency](...) book; it's not just about eventual consistency
-          though; it should be s/eventual/distributed/g
-* lindsey: why is this cool?
+          Consistency](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/final-printversion-10-5-14.pdf)
+          book; it's not just about eventual consistency though; it should be
+          s/eventual/distributed/g
+* lindsey: why is this [q9] cool?
     * it can discover anomalies when a consistency level is too week
     * it can also discover when a consistency level is too strong
     * suggests a development methodology where you start with strong
