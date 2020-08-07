@@ -2,6 +2,49 @@ These are paraphrased notes from a live discussion with several people.
 Parenthesis or brackets are used where the paraphrasing is particularly distant
 from what the speaker said. Feel free to edit these notes as you see fit.
 
+# 2020-08-07, paper discussion
+
+## Week 1 of 2 for [Safe Replication through Bounded Concurrency Verification by Kaki et al. (OOPSLA '18)](https://www.cs.purdue.edu/homes/suresh/papers/oopsla18.pdf)
+
+* lindsey: tough paper, section 5 is particularly dense
+    * consider putting off if people haven't read at depth
+        * gan: another week is ok
+        * farhad: yes, i'd like another week
+        * gan: we can talk at a high level about it
+        * lindsey: yes, let's talk about interesting points
+
+[group meeting]
+
+* lindsey: bounded concurrency; if you bound the number of concurrent
+  operations, is the application safe?
+    * the boundedness is what makes it possible to use an SMT solver to explore
+      the search space of all concurrent program interleavings
+* lindsey: q9 can discover the consistency level [paraphrased: which is
+  required for a thing to be safe]
+    * aside on the consistency level meta language
+        * first paper that presented the specification language for talking
+          about the consistency [of a store; of an operation on a store] was
+          [Replicated Data Types: Specification, Verification, Optimality](...)
+        * author then went on to write [Principals of Eventual
+          Consistency](...) book; it's not just about eventual consistency
+          though; it should be s/eventual/distributed/g
+* lindsey: why is this cool?
+    * it can discover anomalies when a consistency level is too week
+    * it can also discover when a consistency level is too strong
+    * suggests a development methodology where you start with strong
+      consistency, and then progressively weaken things
+    * q9 is implemented as an ocaml compiler pass, and it takes an ocaml
+      program as input; uses sentinel identifier names, eg. a predicate named
+      "inv_*" will be checked
+* lindsey: section 5 is dense, but all of the details is necessary
+* lindsey: they're aiming for a fully automated verification approach, but the
+  tradeoff is the fact that they have a limit on the number of concurrent
+  operations
+    * patrick: why do some things need to be "bounded" and some not? eg. LH can
+      prove for all cases (bounded by time)
+    * patrick/lindsey: they hypothesized that the k for concurrent operations
+      would be small, so they built it to be bound by that
+
 # 2020-07-31, paper discussion
 
 ## Week 1 of 1 for [Stronger Semantics for Low-Latency Geo-Replicated Storage by Lloyd et al. (NSDI '13)](https://www.usenix.org/system/files/conference/nsdi13/nsdi13-final149.pdf) (aka COPS2)

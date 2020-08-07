@@ -1,3 +1,16 @@
+# 2020-08-07, group meeting
+
+* [patrick presents the vrdt-sync app and vrdt-class]
+* questions on umd/oopsla/vrdt code
+    * farhad: [of the LH annotation on lawCommutativity] are we assuming
+      compatible is commutative? is that ok b/c of the foralls on op1 and op2?
+    * gan: do we need to specify a precondition on apply that states that the
+      state is compatible with the operation? ie. something like `{-@ apply ::
+      t -> {v : Operation t | compatibleState t v } -> ... @-}`
+    * lindsey: can you show me the place in the code in which we are using
+      compatible/compatibleState to decide whether or not to apply an
+      operation, or put it on the pending queue?
+
 # 2020-07-31, group meeting
 
 * deniz is joining meeting
