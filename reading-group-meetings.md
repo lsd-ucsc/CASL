@@ -4,7 +4,7 @@ from what the speaker said. Feel free to edit these notes as you see fit.
 
 # 2020-08-07, paper discussion
 
-## Week 1 of 2 for [Safe Replication through Bounded Concurrency Verification by Kaki et al. (OOPSLA '18)](https://www.cs.purdue.edu/homes/suresh/papers/oopsla18.pdf)
+## Week 1 of 2 for [Safe Replication through Bounded Concurrency Verification by Kaki et al. (OOPSLA '18)](https://www.cs.purdue.edu/homes/suresh/papers/oopsla18.pdf) (aka Q9)
 
 * lindsey: tough paper, section 5 is particularly dense
     * consider putting off if people haven't read at depth
