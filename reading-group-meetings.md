@@ -37,9 +37,10 @@ from what the speaker said. Feel free to edit these notes as you see fit.
               implies the *real safety property* (S) that you care about
             * ivy provides automation to find the (I) corresponding to (S),
               using user assistance
-            * eg. inductive invariants are more complex ![leader election
-              example](static/ind-inv.png); C0 is not two leaders, the rest of the
-              things are required to make it inductive
+            * eg. inductive invariants are more complex
+                * ![leader election example](static/ind-inv.png)
+                * C0 is (S) "not two leaders"
+                * the rest of the things are required to make it inductive (I)
         * distinction, the Q9 paper doesn't search for inductive invariants, it
           instead does bounded verification
     * lindsey/farhad/patrick: let's look at section 5.3
