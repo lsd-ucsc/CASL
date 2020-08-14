@@ -2,6 +2,76 @@ These are paraphrased notes from a live discussion with several people.
 Parenthesis or brackets are used where the paraphrasing is particularly distant
 from what the speaker said. Feel free to edit these notes as you see fit.
 
+# 2020-08-14, paper discussion
+
+## Week 2 of 2 for [Safe Replication through Bounded Concurrency Verification by Kaki et al. (OOPSLA '18)](https://www.cs.purdue.edu/homes/suresh/papers/oopsla18.pdf) (aka Q9)
+
+* lindsey: the insight of the Q9 paper is to use symbolic evaluation to
+  exaustively explore a smaller number of states than "all possible states at
+  all replicas"
+    * lindsey: they say at the beginning they'll do bounded verification;
+      bounded by what? "a finite concurrency bound" but what does that mean?
+    * lindsey: it's defined in 5.3, where they define concurrent effects: "a
+      concurrent effect is an effectt that is not present on at least one
+      replica"; with the assumption that "most of the effects are on all of the
+      replicas"; we're only going to reason about the effects which aren't on
+      all replicas
+    * lindsey: how? they pick some number k, do symbolic execution, to reason
+      "at once" about all of the things that can happen within that bound
+* lindsey: returning to the beginning; what was difficult to understand?
+    * patrick: 5.1 and 5.3, mostly 5.3
+    * farhad: same
+    * lindsey: aside; in intro "full verification is challenging in part
+      because of the need to specify suitably strong invariants" [citation to
+      ivy paper (inspiration for mypyv)]
+        * note the term "inductive invariant"
+            * if you want to prove something about a program, eg. "bank acct
+              =0" (call it S)
+            * the invariant you want to prove (S) may not (probably not) an
+              inductive invariant (I)
+            * you want an inductive invariant (I), because that can be proved
+              by induction
+            * you do that by using the "if it holds in the initial state" and
+              "it holds in some state s -> it holds one step later" stuff
+            * so you need to come up with an inductive invariant (I), which
+              implies the *real safety property* (S) that you care about
+            * ivy provides automation to find the (I) corresponding to (S),
+              using user assistance
+            * eg. inductive invariants are more complex ![leader election
+              example](static/ind-inv.png); C0 is not two leaders, the rest of the
+              things are required to make it inductive
+        * distinction, the Q9 paper doesn't search for inductive invariants, it
+          instead does bounded verification
+    * lindsey/farhad/patrick: let's look at section 5.3
+        * lindsey: note, that this paper has some obvious mistakes (eg.
+          unfinished sentence, misspelled word in fig 6)
+        * lindsey: let's look at the symbolic evaluation rules, starting with
+          S-Match-BoolSym
+        * lindsey: what is symbolic execution? what is concrete execution?
+            * concrete: have a program, take input, get output
+            * symbolic: you run the program on a symbolic input (a range of
+              inputs), and you get a symbolic value as output`
+        * lindsey: they distinguish between destructable and non-destructable
+          values
+            * destructable means you can proceed with execution; eg. constants
+              and applications of constructors to constants, which you can
+              pattern-match against
+            * non destructable values lead to evaluation of both sides of
+              branches
+    * lindsey:
+        * in sec 3 they talk about the language people write, ocaml
+        * they compile that to an IR
+            * patrick: isn't the IR the thing from 5.1?
+                * lindsey: not exactly
+        * they run the symbolic execution on the IR
+        * lindsey: this is a common technique, see [klee
+          paper](https://www.doc.ic.ac.uk/~cristic/papers/klee-osdi-08.pdf)
+    * lindsey: sec 5.3 rules continue
+        * after defining $DOWN_ARROW they have enough to define $RIGHT_ARROW
+          (the small step symbolic-execution), the rule S-Oper
+    * lindsey: section on automated repair; very similar to the Quelea paper
+        * they don't really say what it does
+
 # 2020-08-07, paper discussion
 
 ## Week 1 of 2 for [Safe Replication through Bounded Concurrency Verification by Kaki et al. (OOPSLA '18)](https://www.cs.purdue.edu/homes/suresh/papers/oopsla18.pdf) (aka Q9)

@@ -1,3 +1,49 @@
+# 2020-08-14, group meeting
+
+* lindsey has to stop at 12:30pm
+* lindsey:
+    * PLMW notifications haven't gone out; sorry
+    * Everybody gets in; don't worry if you are
+    * SPJ wants the panel to go well, so please feel free to ask questions
+      depsite the short intro
+* lindsey: how is everyone going this week?
+    * farhad: i got a new housemate, and we had a barbecue at the beach, some
+      confusion about what to work on
+        * lindsey: because of the recent questions about the direction for
+          gallifrey?
+        * [farhad describes some confustion]
+        * lindsey: this is a common problem; not knowing what you're supposed
+          to implement
+            * if there are several options, try to write down what the options
+              are, try implementing one, or try implementing several
+            * rubber duck: explain the issue on slack to lindsey
+    * patrick: long and confusing update
+        * trouble using liquidhaskell and doctest
+        * milestone with gan in editor project
+            * nixops procrastination vs puppet
+                * lindsey/farhad: monotonic or stable properties give you
+                  strong reasoning tools
+                    * Arjun Guha worked on [Puppet configuration
+                      verification](https://arxiv.org/abs/1509.05100)
+                    * Also did some [follow up
+                      "tortoise"](https://people.cs.umass.edu/~brun/pubs/pubs/Weiss17ase.pdf)
+    * gan: working on formalizing operational semantics for a distributed
+      system running on a weak consistency network; combining the various ideas
+      from the papers we have been reading
+        * gan presents document "Explicit Consistency"
+        * allows the application to define an invariant
+        * gan represents the operation as function which returns (State ->
+          State), similar to q9 and cav19
+        * gan has another interface that represents an operation as a set of
+          constructors typed Eff, and there's a function `interp :: Eff ->
+          State -> State`
+        * lindsey: a typical setup
+            * have an invariant
+            * show that it's true in an initial condition
+            * show that if it holds in one state it should hold after a transition
+
+[discussion continues in the paper discussion meeting]
+
 # 2020-08-07, group meeting
 
 * [patrick presents the vrdt-sync app and vrdt-class]
