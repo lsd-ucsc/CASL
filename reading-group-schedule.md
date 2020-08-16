@@ -49,11 +49,11 @@ This list is tentative and subject to change.
     
 * August 14
 
-    [Replication-Aware Linearizability](https://www.irif.fr/~cenea/papers/ra-lin-pldi19.pdf) by Wang et al. (PLDI '19)
+	Continue discussion of Kaki et al. from last time
     
 * August 21
 
-    TBD
+    [Kademlia: A Peer-to-peer Information System Based on the XOR Metric](https://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf) by Maymounkov and Mazieres (IPTPS '02)
     
 * August 28
 
