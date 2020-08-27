@@ -2,7 +2,7 @@
 
 ## What's all this, then?
 
-CASL (pronounced "castle") is organizing a reading group this summer.  We'll meet on Fridays, 11:30am-12:30pm, each week of summer quarter, via Zoom (ask a CASL person to forward you the Zoom link if you need it).  All are welcome to participate.
+[CASL](README.md) is organizing a reading group this summer.  We'll meet on Fridays, 11:30am-12:30pm, each week of summer quarter, via Zoom (ask a CASL person to forward you the Zoom link if you need it).  All are welcome to participate.
 
 If you show up to reading group, be ready to participate in the discussion!  If more than 5 people attend, for the first part of the meeting we'll use Zoom breakout rooms to create smaller (3-4 person?) conversation groups to promote active discussion.  Then we'll reconvene as a full group to summarize the small-group discussions.
 
