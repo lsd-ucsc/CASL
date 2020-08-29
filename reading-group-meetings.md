@@ -2,6 +2,66 @@ These are paraphrased notes from a live discussion with several people.
 Parenthesis or brackets are used where the paraphrasing is particularly distant
 from what the speaker said. Feel free to edit these notes as you see fit.
 
+# 2020-08-28, paper discussion
+
+## Week 1 of ? for [Composing and Decomposing Op-Based CRDTs with Semidirect Products](https://dl.acm.org/doi/pdf/10.1145/3408976)
+
+* lindsey: as gan pointed out, it's nice that this paper is open access;
+  they're published in PACMPL; all of the big four ACM conferences are in
+  PACMPL except for PLDI
+    * lindsey: the upshot is that it's really easy to get modern PL papers
+      because they're open access by default
+* lindsey: some context: Heather Miller and Christopher Meiklejohn are
+  longtime friends of mine! [background on heather and chris]
+    * lindsey: chris worked at Basho on Riak they were on the cutting edge of
+      putting CRDTs in a product
+    * lindsey: this is not a systems paper; it's not about evaluation &
+      implementation
+* lindsey: big picture
+    * lindsey: CRDTs known by that name have been around since around 2011
+    * lindsey: composability has always been discussed (elementwise
+      composition: a Map with elements that are CDTS or a Set with elements
+      that are CRDTS)
+    * lindsey: this paper makes the point that some compositions don't work
+      naturally (adding an (f)map operation to a Map to change the values; such
+      an operation would confict with the Map's add operation [if you don't add
+      and (f)map in the same order, you'll get a different final resulting Map)
+    * lindsey: so this paper is more about composing operations on the same
+      CRDT (as opposed to composing data structures)
+* lindsey: the idea is..
+    * lindsey: you decide on the semantics you want first; eg. always do Map
+      add before Map (f)map; and then if you get operations out of order, you
+      can adjust the later operations to apply correctly (similar to OT)
+    * lindsey: there are lots of fiddly details that are difficult to get right
+        * lindsey: in section 4 they add (f)map to a Map that has add, but they
+          say that delete is now too hard and leave it for future work
+        * lindsey: Question: is deletion special?
+    * lindsey: the difficult part is designing the partial-action so that even
+      [when things are out of order, things work out]
+        * lindsey: in section 4 they discuss the specific example and in
+          section 6 "generality" they [might be generalizing]
+    * lindsey: in 6.1 they introduce OT; the classic example is "insert at
+      index 3 to list" and concurrently "insert at index 1 to list" where the
+      order of these requires that the index is adjusted
+        * patrick: RGA gets around this by using a "globally unique" index?
+        * lindsey: but in OT, you do an operation on the index; OT is less
+          explored in the research
+        * lindsey: this paper is interesting they're [formalizing what OT is]
+* lindsey: what do you all think of this paper?
+    * gan: i read some additional papers
+    * farhad: this seems more like a way to do things than an automatically
+      generating
+        * lindsey: yeah, there's nothing in here about automatic generation or
+          decomposition or verification of CRDTs
+        * lindsey: they show that two specifyc CRDTs crossed are a CRDT; they
+          show that their semidirect product is an implementation of a
+          reference from 1996; they claim something else about a CRDT called
+          POlog
+        * lindsey: this is a paper that presents a new idea; they don't know if
+          it's fully general; they generated some novel CRDTs; the semidirect
+          product can also be used to decompose CRDTs and that this is what
+          people are already doing
+
 # 2020-08-14, paper discussion
 
 ## Week 2 of 2 for [Safe Replication through Bounded Concurrency Verification by Kaki et al. (OOPSLA '18)](https://www.cs.purdue.edu/homes/suresh/papers/oopsla18.pdf) (aka Q9)
