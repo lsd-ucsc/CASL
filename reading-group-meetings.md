@@ -4,7 +4,7 @@ from what the speaker said. Feel free to edit these notes as you see fit.
 
 # 2020-08-28, paper discussion
 
-## Week 1 of ? for [Composing and Decomposing Op-Based CRDTs with Semidirect Products](https://dl.acm.org/doi/pdf/10.1145/3408976)
+## Week 1 of 1 for [Composing and Decomposing Op-Based CRDTs with Semidirect Products](https://dl.acm.org/doi/pdf/10.1145/3408976)
 
 * lindsey: as gan pointed out, it's nice that this paper is open access;
   they're published in PACMPL; all of the big four ACM conferences are in
