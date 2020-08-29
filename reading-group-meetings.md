@@ -2,62 +2,6 @@ These are paraphrased notes from a live discussion with several people.
 Parenthesis or brackets are used where the paraphrasing is particularly distant
 from what the speaker said. Feel free to edit these notes as you see fit.
 
-# 2020-08-28, paper discussion
-
-## Week 1 of ? for [Composing and Decomposing Op-Based CRDTs with Semidirect Products](https://dl.acm.org/doi/pdf/10.1145/3408976)
-
-* lindsey: how was ICFP?
-    * patrick: gan? farhad? do you want to start?
-    * farhad: i enjoyed the talks, though I missed some things
-* lindsey: were you able to attend PLMW?
-    * lindsey: patrick evacuated and gan was displaced temporarily
-    * farhad: i attended the second half
-    * lindsey: i prepared for 6 months, partially because all of you are
-      starting out; it's frustrating the timing of the wildfire; i hope next
-      time you're able to participate
-    * lindsey: also, reach out to Kenny Foner if any of the things they
-      discussed apply to you; also Amal's talk and Nadia's talk about z3
-* lindsey: the way i attend conferences has changed; i attend fewer talks; my
-  interests are deeper an narrower
-    * lindsey: i want to give you all permission to skip talks and focus on the
-      social events; that said, the [Composing and Decomposing Op-Based CRDTs
-      with Semidirect Products](https://dl.acm.org/doi/pdf/10.1145/3408976)
-      talk, which gan suggested we read for this week, [is relevant for our
-      research]
-    * lindsey: the haskell symposium and the haskell implementer's workshop are
-      today [and yesterday]; [couldn't keep up] and i think it's good to see
-      some of those talks
-        * patrick: i attended x y and z; i've posted talks i liked in the casl
-          channel, and will continue
-        * lindsey: are you all familiar with transactional memory? it used to
-          be [couldn't keep up] it's been a success in haskell
-* lindsey: what other highlights? gan?
-    * gan: i had trouble focusing, it's almost my first conference, being a
-      virtual conference it was even harder; i don't know how to socialize
-      virtually
-    * lindsey: we tried some socialization with breakout rooms at PLMW; it
-      didn't work well because the technology failed (web users of zoom
-      couldn't use breakout rooms)
-    * [couldn't keep up]
-    * patrick: let's "attend" the next virtual conference together;
-      coordinating with eachother on slack about talks and social rooms
-* lindsey: the next one is OOPSLA
-    * lindsey: things might be different; i've heard organizing it has had some
-      trouble
-    * lindsey: i did ICFP organizing; in particular, we captioned the talks; we
-      sent them to a professional captioner; we then corrected them
-      line-by-line; it was a new way to experience talks; i hope it's useful
-      for you
-    * lindsey: correcting the captions for the first few talks in section 4
-      made me interested in the topics!
-    * lindsey: some people struggled with the q&a being directly after the
-      talk, concurrent with the following talk; some talks didn't have speakers
-      present to answer questions
-    * patrick: i had trouble with the program and multi-track stuff
-        * lindsey: it's usually one-track; this one didn't had that
-    * [couldn't keep up]
-* lindsey: despite all of our homes almost being on fire...
-
 # 2020-08-14, paper discussion
 
 ## Week 2 of 2 for [Safe Replication through Bounded Concurrency Verification by Kaki et al. (OOPSLA '18)](https://www.cs.purdue.edu/homes/suresh/papers/oopsla18.pdf) (aka Q9)
