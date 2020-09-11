@@ -1,3 +1,32 @@
+## 2020-09-11, group meeting
+
+* lindsey: reading group done
+* lindsey: now let's focus on all the work we have to do
+* lindsey: i'll run the APL seminar with Tyler this year; Owen is taking a
+  working break at Facebook; we'll rename it to the LSD seminar
+    * lindsey: original idea was to watch talks and be the peanut gallery
+    * lindsey: tyler asked if we could model it after the berkley systems
+      programming seminar
+        * many intermediate staged phd students
+        * not folks about to go on the job market
+        * it's really important to get students talking to eachother
+        * idea
+            * 20 minutes of social time
+            * speaker gives a talk
+            * q & a
+    * patrick: should we sign up for this?
+        * lindsey: yes
+* patrick: what about twitch people?
+    * lindsey: more appropriate for the undergrad dist sys class
+* lindsey: research stuff
+    * lindsey: let's try to submit projects for research this fall
+        * lindsey: gan, violet project, paper started in repo starting off
+        * lindsey: patrick, verif-dkvs project, much relation to the vrdts
+          project; it's a nice fit
+            * lindsey: let's discuss whether to approach proving safety
+              properties vs liveness properties next week after the monday
+              oopsla deadline
+
 ## 2020-08-28, group meeting
 
 * lindsey: how was ICFP?
