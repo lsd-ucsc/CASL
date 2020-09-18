@@ -1,3 +1,39 @@
+## 2020-09-18, group meeting
+
+* lindsey: we're starting projects
+    * gan's got a paper draft!
+    * i'm starting the related work for partick's project!
+    * i'm trying to write ahead of doing the project as part of an experiment
+      and not sure how i feel about it yet; too much writing up front puts the
+      cart before the horse; on the other hand, related work and our goals can
+      help to guide us
+* patrick: i'd like to at some point make a simpler version of LH which does
+  less and is more focused; it will take me awhile to do so
+    * lindsey: there is a long tradition of papers "featherweight X"
+    * patrick: [ much discussion of efficiency concerns, or lack thereof ]
+* lindsey: reviewing aplos and found it interesting that a microservices
+  needing high efficiency would run up against slowdown from OS context
+  switches
+    * gan: we'd want a featherweight smt solver too
+    * lindsey: yes, i was going to bring that up, we'd want one that does
+      exactly what LH (or featherweight LH) needs; this is related with the
+      issue of Ord,Num,Eq being lifted to the SMT level verbatim (instances
+      ignored)
+    * lindsey: what does a language need to have in order for us to be able to
+      do something like liquidhaskell in that language?
+* gan: so patrick and i were discussing our goals; we're mostly done with the
+  editor; there are user interface issues, but they're not our main goal
+    * gan: we've decided to work on learning idris,adga,coq,liquidhaskell
+      together
+    * patrick: we might also use the time to work on our PLDI projects
+    * lindsey: do you think there's a way to use the code for other projects?
+    * patrick/gan: yes we could verify the network components and release them
+      as a library with applications written on top
+    * lindsey: also the composing/decomposing CRDTs project [Composing and
+      Decomposing Op-Based CRDTs with Semidirect
+      Products](https://dl.acm.org/doi/pdf/10.1145/3408976), leaves much undone
+      that we could pick up and explore
+
 ## 2020-09-11, group meeting
 
 * lindsey: reading group done
