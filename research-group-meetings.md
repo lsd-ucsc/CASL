@@ -1,3 +1,91 @@
+## 2020-09-25, group meeting
+
+* lindsey: grad dist sys, 20 ppl, 17 on waitlist, small discussion class
+    * mostly older papers, maybe some people will drop
+* lindsey: meetings this quarter
+    * lindsey: patrick+lindsey meeting tuesdays
+    * lindsey: gan+lindsey+james wilcox meeting tuesdays for violet project
+    * lindsey: meeting tuesdays about projects, thursdays as group!
+* projects
+    * cbcast project
+        * lindsey: writing a background to explain about causal delivery b/c
+          our venue is a PL crowd
+        * lindsey: a smaller task than the violet project, a bit further along
+          possibly
+        * lindsey: the thing we're implmenting is well understood, and we're
+          doing it in a new setting, and we should cite people who have tried
+          to do things like this
+        * patrick: i'm assuming the VT property holds
+        * patrick: i'm assuming the transport layer exists, and is broadcast
+        * patrick: i'm going to prove the statement at the beginning of sec 5.1
+          on page 281 (pdf page 10) which says :
+          ```
+          m -> m' => for-all p deliver_p(m) ->^p deliver_p(m')
+          ```
+          ie. assuming messages `m` and `m'` are received at process `p`, if
+          `m` happens-before `m'` then that implies that all processes `p`
+          deliver `m` before (execution order) delivering `m'`
+        * patrick: with that done, i will look to expand to proving other
+          properties, such as the CBCAST liveness part, the VT property, or
+          something about the broadcasts performed by the transport layer
+    * violet project
+        * lindsey: we're taking the underspecified indigo project and making it
+          more formal
+            * lindsey: not only that, we're making it more general
+            * lindsey: there are a lot of design decisions
+            * lindsey: if we don't make PLDI might be a good fit for ICFP or it
+              might be better at more theoretical conferences, such as PODC
+              (lindsey: maybe feb 2021?)
+        * gan: i'm trying to use the semantics to write down some proofs
+            * gan: so i'm first disproving the banking example; it's fairly
+              simple
+            * gan: i'm using the example from the SNAPL paper; i'm encoding
+              that execution in my operational semantics
+            * gan: to prove that, you have to think about all possible
+              executions
+            * gan: in our operational semantics, we have a concept of
+              permutation which needs to be formalized before i can prove that
+              part
+            * lindsey: for background, patrick, it's inspired by the CAV19
+              paper, if you recall there was a "big rule" which stepped from
+              one configuration to another; and this is a similar idea where
+              there's some set of effects that have happened, and ..
+                * gan: ste state of the whole system is a set of effects, and a
+                  replica is a subset of effects, and you get a permutation of
+                  a subset and that's a single replica
+                * lindsey: does the CAV19 paper have a notion of permutation?
+                * gan: page 6 of the CAV19 paper
+                * lindsey: things are written differently, but it's part of
+                  their definition
+                * gan: i need to define the permutation part inductively, and
+                  then i can finish the proof
+        * lindsey: at a high level, one thing we want to do is formally specify
+          the indigo analysis; a static analysis which will tell you if a
+          particular program can violate its stated invariant when run
+          concurrently; they don't specify the consistency model; we're going
+          to have our analysis parameterized over a specification of the
+          consistency policy
+            * patrick: what's the long term goal? mechanical verification?
+            * lindsey: gan might mechanically prove some of it in coq
+            * patrick: what next?
+            * lindsey: you could, in principal, extract a verified
+              implementation from the formalization in coq
+            * gan: users provide a specification for an application
+            * lindsey: yes, not a client, just the replicated data structure
+              and a specification of what you do with it
+            * patrick: it sounds like a compiler component
+            * lindsey: this is an interesting question; Q9 became a compiler
+              component
+            * patrick: i could help with marrying this analysis with some
+              compiler or other system to make it usable by programmers
+            * lindsey: for Q9, you can't verify arbitrary programs, you need to
+              port them to ocaml and their specific system
+            * lindsey: for Indigo, can you take an arbitrary java program and
+              verify it?
+            * lindsey: "if a particular kind of error would occur at runtime,
+              the analysis would catch it" so the question is under what
+              circumstances that would occur?
+
 ## 2020-09-18, group meeting
 
 * lindsey: we're starting projects
