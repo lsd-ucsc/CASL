@@ -58,7 +58,3 @@ This list is tentative and subject to change.
 * August 28
 
 	[Composing and decomposing op-based CRDTs with semidirect products](https://dl.acm.org/doi/10.1145/3408976) by Weidner, Miller, and Meiklejohn (ICFP '20)
-
-* September 4
-
-    [Kademlia: A Peer-to-peer Information System Based on the XOR Metric](https://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf) by Maymounkov and Mazieres (IPTPS '02)
