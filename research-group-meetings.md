@@ -1,3 +1,122 @@
+## 2020-09-18, group meeting
+
+* lindsey: we're starting projects
+    * gan's got a paper draft!
+    * i'm starting the related work for partick's project!
+    * i'm trying to write ahead of doing the project as part of an experiment
+      and not sure how i feel about it yet; too much writing up front puts the
+      cart before the horse; on the other hand, related work and our goals can
+      help to guide us
+* patrick: i'd like to at some point make a simpler version of LH which does
+  less and is more focused; it will take me awhile to do so
+    * lindsey: there is a long tradition of papers "featherweight X"
+    * patrick: [ much discussion of efficiency concerns, or lack thereof ]
+* lindsey: reviewing aplos and found it interesting that a microservices
+  needing high efficiency would run up against slowdown from OS context
+  switches
+    * gan: we'd want a featherweight smt solver too
+    * lindsey: yes, i was going to bring that up, we'd want one that does
+      exactly what LH (or featherweight LH) needs; this is related with the
+      issue of Ord,Num,Eq being lifted to the SMT level verbatim (instances
+      ignored)
+    * lindsey: what does a language need to have in order for us to be able to
+      do something like liquidhaskell in that language?
+* gan: so patrick and i were discussing our goals; we're mostly done with the
+  editor; there are user interface issues, but they're not our main goal
+    * gan: we've decided to work on learning idris,adga,coq,liquidhaskell
+      together
+    * patrick: we might also use the time to work on our PLDI projects
+    * lindsey: do you think there's a way to use the code for other projects?
+    * patrick/gan: yes we could verify the network components and release them
+      as a library with applications written on top
+    * lindsey: also the composing/decomposing CRDTs project [Composing and
+      Decomposing Op-Based CRDTs with Semidirect
+      Products](https://dl.acm.org/doi/pdf/10.1145/3408976), leaves much undone
+      that we could pick up and explore
+
+## 2020-09-11, group meeting
+
+* lindsey: reading group done
+* lindsey: now let's focus on all the work we have to do
+* lindsey: i'll run the APL seminar with Tyler this year; Owen is taking a
+  working break at Facebook; we'll rename it to the LSD seminar
+    * lindsey: original idea was to watch talks and be the peanut gallery
+    * lindsey: tyler asked if we could model it after the berkley systems
+      programming seminar
+        * many intermediate staged phd students
+        * not folks about to go on the job market
+        * it's really important to get students talking to eachother
+        * idea
+            * 20 minutes of social time
+            * speaker gives a talk
+            * q & a
+    * patrick: should we sign up for this?
+        * lindsey: yes
+* patrick: what about twitch people?
+    * lindsey: more appropriate for the undergrad dist sys class
+* lindsey: research stuff
+    * lindsey: let's try to submit projects for research this fall
+        * lindsey: gan, violet project, paper started in repo starting off
+        * lindsey: patrick, verif-dkvs project, much relation to the vrdts
+          project; it's a nice fit
+            * lindsey: let's discuss whether to approach proving safety
+              properties vs liveness properties next week after the monday
+              oopsla deadline
+
+## 2020-08-28, group meeting
+
+* lindsey: how was ICFP?
+    * patrick: gan? farhad? do you want to start?
+    * farhad: i enjoyed the talks, though I missed some things
+* lindsey: were you able to attend PLMW?
+    * lindsey: patrick evacuated and gan was displaced temporarily
+    * farhad: i attended the second half
+    * lindsey: i prepared for 6 months, partially because all of you are
+      starting out; it's frustrating the timing of the wildfire; i hope next
+      time you're able to participate
+    * lindsey: also, reach out to Kenny Foner if any of the things they
+      discussed apply to you; also Amal's talk and Nadia's talk about z3
+* lindsey: the way i attend conferences has changed; i attend fewer talks; my
+  interests are deeper an narrower
+    * lindsey: i want to give you all permission to skip talks and focus on the
+      social events; that said, the [Composing and Decomposing Op-Based CRDTs
+      with Semidirect Products](https://dl.acm.org/doi/pdf/10.1145/3408976)
+      talk, which gan suggested we read for this week, [is relevant for our
+      research]
+    * lindsey: the haskell symposium and the haskell implementer's workshop are
+      today [and yesterday]; [couldn't keep up] and i think it's good to see
+      some of those talks
+        * patrick: i attended x y and z; i've posted talks i liked in the casl
+          channel, and will continue
+        * lindsey: are you all familiar with transactional memory? it used to
+          be [couldn't keep up] .. it's been a success in haskell
+* lindsey: what other highlights? gan?
+    * gan: i had trouble focusing, it's almost my first conference, being a
+      virtual conference it was even harder; i don't know how to socialize
+      virtually
+    * lindsey: we tried some socialization with breakout rooms at PLMW; it
+      didn't work well because the technology failed (web users of zoom
+      couldn't use breakout rooms)
+    * [couldn't keep up]
+    * patrick: let's "attend" the next virtual conference together;
+      coordinating with eachother on slack about talks and social rooms
+* lindsey: the next one is OOPSLA
+    * lindsey: things might be different; i've heard organizing it has had some
+      trouble
+    * lindsey: i did ICFP organizing; in particular, we captioned the talks; we
+      sent them to a professional captioner; we then corrected them
+      line-by-line; it was a new way to experience talks; i hope it's useful
+      for you
+    * lindsey: correcting the captions for the first few talks in section 4
+      made me interested in the topics!
+    * lindsey: some people struggled with the q&a being directly after the
+      talk, concurrent with the following talk; some talks didn't have speakers
+      present to answer questions
+    * patrick: i had trouble with the program and multi-track stuff
+        * lindsey: it's usually one-track; this one didn't had that
+    * [couldn't keep up]
+* lindsey: despite all of our homes almost being on fire...
+
 # 2020-08-14, group meeting
 
 * lindsey has to stop at 12:30pm
