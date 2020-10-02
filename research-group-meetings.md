@@ -1,3 +1,30 @@
+## 2020-10-08, group meeting
+
+Discuss gan's project this week
+
+## 2020-10-01, group meeting
+
+* lindsey: let's keep meeting on time
+    * lindsey: congrats on officially starting
+    * lindsey: did you have class?
+        * gan/patrick: yes, tyler's compilers class w/us/farhad/reese
+    * patrick:
+        * [long update about cbcast-in-lh and fun errors that seem to make no
+          sense]
+    * gan: still working on formalization
+        * gan: wrote two proofs by hand; things seem ok
+        * gan: no fighting tools
+        * lindsey: so the proofs that you wrote down showed a particular
+          program wasn't safe
+        * lindsey: proving that a program is safe is much harder
+        * lindsey: so far, the project is looking at the cav19 and indigo paper
+          to formalize explicit consistency; write an invariant and show that
+          it's preserved; indigo doesn't specify the consistency policy; we're
+          adding the ability to plug into the consistency policy and prove that
+          all executions of a program (interface+state);
+            * need to then express the analysis formulae, program, and
+              invariants in a way that the smt solver can handle
+
 ## 2020-09-25, group meeting
 
 * lindsey: grad dist sys, 20 ppl, 17 on waitlist, small discussion class
