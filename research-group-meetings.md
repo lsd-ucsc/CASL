@@ -1,6 +1,28 @@
 ## 2020-10-08, group meeting
 
-Discuss gan's project this week
+* patrick: LH stuff is better now that i'm putting refinements on type
+  parameters rather than on the outside
+* lindsey: [the LSD website](https://lsd-ucsc.github.io/) has some complexity
+  in the static site generator; spent some time switching to a simpler theme by
+  forking [the cornell pl website](https://pl.cs.cornell.edu/) (with
+  permission)
+    * gan: what language is hugo written in?
+    * lindsey: it's go, but you don't have to install go becuase it's
+      distributed as a binary
+* gan: [sharing violet project paper]
+    * formalization for an application
+        * ops, state, effect type, transitions
+    * operational semantics
+        * replica definition as permutation of subset of all global effects
+            * permutation is external to consistency; consistency doesn't
+              define the order of effects on a replica
+        * transition as replica + op and modification of effects+vis
+    * soundness proof
+        * want to prove that a program that passes the analysis doesn't
+          invalidate an invariant at runtime
+            * (of a type system: a program that typechecks doesn't have a type
+              error at runtime)
+        * "progress and preservation" in chapter 8 of TAPL
 
 ## 2020-10-01, group meeting
 
