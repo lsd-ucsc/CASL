@@ -1,3 +1,23 @@
+## 2020-10-15, group meeting
+
+* lindsey:
+    * lindsey: trouble with lsd lab website
+    * lindsey: hugo suggested process where you script a deploy via git push
+      doesn't seem to work with multiple folks committing
+    * lindsey: github-action rsync to ITs site is another option
+    * lindsey: hooknook which git-pulls on github webhook call on the ITs side
+      is another option
+    * patrick: i suggest a cronjob which pulls on the ITs side
+    * lindsey: also tyler's problem where files got duplicated
+* lindsey:
+    * patrick: algos class is frustrating for reasons
+        * focus on academic integrity?
+        * focus on deep comprehension of material for use in research?
+    * lindsey: there aren't separate classes for MS and PhDs
+        * patrick: ah..
+* discussion of parsing
+* james, gan, and lindsey discuss violet
+
 ## 2020-10-08, group meeting
 
 * patrick: LH stuff is better now that i'm putting refinements on type
