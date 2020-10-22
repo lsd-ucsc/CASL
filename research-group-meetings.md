@@ -1,3 +1,38 @@
+## 2020-10-22, group meeting
+
+* lindsey: how's it going?
+    * gan: normal, taking class, doing project; i prefer the summer break
+        * lindsey: yes, that's being a grad student at least for these first couple years
+        * lindsey/gan: discussion of algos class
+* lindsey: go-or-no-go decisions about PLDI papers
+    * lindsey: avoid crunch by writing paper and doing polish early
+    * lindsey: be aware that we'll neet to make a decision around november
+    * lindsey:
+        * violet
+            * lindsey: gan wrote violet analysis in rosette, with verification functionality
+            * lindsey: it might be easily or harder proved sound in rosette depending on the consistency policy in question
+            * gan: it's easy to prove for no-consistency, or for strong-consistency
+            * lindsey/gan: it's hard to prove for points in the middle
+            * lindsey: might require proving something about histories of states
+        * cbcast
+            * patrick: not much progress since algos class started
+            * patrick: need a bit more time to get back into it and see if i can be unblocked
+    * gan:
+        * how does the process of submitting a paper work?
+        * how long does it take normally?
+        * tell me about the oopsla process?
+            * lindsey: for the oopsla process, we submitted in may, then we got
+              conditionally accepted [around july?] [and most papers which are
+              conditionally accepted end up getting accepted]
+            * lindsey: then they asked for some minor changes, (2 months) and
+              they accepted that with a few suggestions
+            * lindsey: then we had about 2 weeks to submit the camery ready
+              version
+        * after PLDI, what other conferences are coming?
+            * lindsey: ICFP2021 is probably around Feb or March 2021 for
+              conference in Aug
+            * lindsey: PODC, though that's a bit different
+
 ## 2020-10-15, group meeting
 
 * lindsey:
