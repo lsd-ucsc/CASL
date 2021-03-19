@@ -1,3 +1,114 @@
+## 2021-03-19, group meeting (Peter Alvaro joining)
+
+* lindsey: wrote a doc about our ideas for next steps on casl https://docs.google.com/document/d/1WsKgBLqrxiCVmew860VrnlXeiYtLH2gRCzb7ag_yTwU/edit#
+* lindsey: gan got inspired to directly integrate SMT and refinement types into agda
+    * peter/gan: second order logic can't be done in SMT
+    * lindsey: could we add this automation to prove the stuff that should be easy
+* lindsey: should we define causal consistency in terms of traces?
+    * peter: can we define causal consistency in terms of events and the happens-before relationship and transitivity?
+    * lindsey: looking at cops
+    * peter: it's not formal enough
+    * lindsey: COPS says: https://www.cs.cmu.edu/~dga/papers/cops-sosp2011.pdf
+    * peter: i don't think we need to reason about executions; reson about events (reads and writes, as opposed to receipts and deliveries)
+* peter: join/leave
+    * peter: punctuation, monotonically increasing numbered views; within an epoch, the view doesn't change
+    * lindsey: this is similar to what we did with LVars; data structure have phases
+    * lindsey: an LVars followup used an idea which added more punctuation/versioning to structures https://dl.acm.org/doi/abs/10.1145/2851141.2851142
+    * patrick: is this consensus?
+        * peter: yes
+        * patrick: could we leverage a subset of messages that are totally ordered to attack consensus?
+        * peter: **read lamport's seminal paper**; you can't trivially get a total order out of a partial order
+        * peter: consensus isn't live (??) if you don't talk to eachother then all your messages are concurrent, but you need to make progress somehow
+        * lindsey: lamport's point was something like "you can extend a partial order (like the causal order) into a total order by using some tie-breaking mechanism like process ID or whatever, but not if the set of process IDs is changing"
+* lindsey: peter, was there something to collaborate with pat about?
+    * patrick: is pat's collaboration system similar to abcast, since both are passing around a token?
+    * peter: workflows across different domains; transactions are hard; pat's solution is to pass around a collaboration
+    * peter: related to "sagas" .. what if i wanted atomicity but without locks .. instead of undoing things you handle reconciliation logic
+* lindsey: what's next? do you want to collaborate, peter?
+    * peter: i want to work on this cbcast stuff and maybe also the pat stuff
+    * peter: i don't want us to be spread through too thin
+
+## 2020-12-10, group meeting
+
+## 2020-12-03, group meeting
+
+* [patrick was late]
+* lindsey: violet project could be submitted to ICFP
+* lindsey: ICFP deadline is late late-feb/early-march
+* lindsey: advancing is at end of 3rd (or 4th because of covid) year, it means
+  you're done with the course requirements, you have a reading committee
+    * lindsey: i think if you get a paper accepted, you'll have an easier
+      chance to advance
+* patrick: i need to rewrite the VectorClock and DelayQueue in terms of an
+  invariant on their structure, to lift the operations into the refinement type
+  layer, and that will allow us to write down the property from the paper
+  exactly as it is written
+    * lindsey: for the paper, we need to say what it's for
+    * lindsey: it's for simplifying the TCB for SCC
+    * lindsey: it's for simplifying verified implementations of OP-CRDTS (eg.
+      the twophase map from VRDT paper)
+    * lindsey:
+        1. we can reimplement one of the verified OP-CRDTS, or
+        1. a verified K/V store
+        1. a distributed snapshots thing (though this might only require causal
+        order, not causal broadcast)
+    * patrick: so we need to write the properties for the CRDT or for the
+      verified K/V store in terms of the underlying CBCAST properties
+    * patrick: if we could write our verification in a modular fashion, it
+      would be a contribution
+    * patrick: one thing is that CBCAST doesn't support group membership
+      changes
+        * lindsey: it does seem that view changes (group membership changes)
+          are only discussed in terms of ABCAST
+        * lindsey: ABCAST is defined in terms of CBCAST, and uses a token
+          holder to determine message ordering
+            * they don't discuss exactly how to decide if the token holder has
+              failed
+            * they don't discuss exactly how to ensure that there is only one
+              token holder
+            * or maybe in a followup paper about the ISIS system
+        * lindsey: not handling group membership changes is fine [patrick:
+          scope-creep / further-work]
+* lindsey: bounded/unbounded in violet
+    * lindsey: discussing with james, it seems that rosette and the team around
+      it are committed to the bounded verification approach
+    * lindsey: james does have some thoughts about how to extend rosette to do
+      unbounded verification that's still decidable using EPR logic
+* no fire crackers in E2
+
+## 2020-11-05, group meeting
+
+* gan: we paired to figure out how to represent the consistency closer to psi
+  in the paper
+    * to do that we have to represent a set and fold over it
+    * patrick: and maybe there are other approaches!
+
+## 2020-10-29, group meeting
+
+* lindsey: which projects should we work on?
+    * lindsey: the violet project has some code in rosette
+    * lindsey: patrick could contribute to gan's project so we could build up a
+      submission for PLDI
+        * lindsey: patrick could take a look at the rosette code
+            * lindsey: it does almost what the indigo paper did, but in way
+              less code
+        * lindsey: patrick could contribute to the writing 
+            * explicit consistency, as defined in the indigo paper
+            * we want to describe the system; write down invariants, run an
+              analysis, and determine whether the invariants can be invalidated
+              at runtime
+            * the paper writing tasks than need to be done
+                * read through the paper first
+                * what is the banking example model
+                * what is the system model
+                * background section on what consistency is (?)
+                * additional examples from the indigo paper and q9 paper:
+                  banking, tournament..
+    * lindsey: our contributions so far are
+        * a software artifact that's easier to understand than indigo
+        * a paper proof of soundness of the analysis
+    * PLDI has a nov 20 deadline; three weeks
+
 ## 2020-10-22, group meeting
 
 * lindsey: how's it going?
