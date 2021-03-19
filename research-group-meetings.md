@@ -17,7 +17,7 @@
     * patrick: is this consensus?
         * peter: yes
         * patrick: could we leverage a subset of messages that are totally ordered to attack consensus?
-        * peter: **read lamport's seminal paper**; you can't trivially get a total order out of a partial order
+        * peter: **read lamport's seminal paper**; you can't trivially get a total order out of a partial order http://www.citemaster.net/get/10b50274-7bc5-11e5-8aa1-00163e009cc7/p558-lamport.pdf
         * peter: consensus isn't live (??) if you don't talk to eachother then all your messages are concurrent, but you need to make progress somehow
         * lindsey: lamport's point was something like "you can extend a partial order (like the causal order) into a total order by using some tie-breaking mechanism like process ID or whatever, but not if the set of process IDs is changing"
 * lindsey: peter, was there something to collaborate with pat about?
