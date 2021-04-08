@@ -602,6 +602,17 @@ from what the speaker said. Feel free to edit these notes as you see fit.
   parametric on consistency policies and it's an implementation of those
   policies, and it's a rigorous understanding of this relationship between
   commutativity ... [typist couldn't keep up]
+* errata:
+    * in the main rule of their operational semantics (top of page 7), there are two typos:
+        * the premise `eo \subseteq eo_r` should read `eo|_{\Delta_r} \subseteq eo_r`. 
+          in other words, the order `eo` should be restricted to the domain `\Delta_r`.
+        * the premise `\eta = (..., eo)` should read `\eta = (..., eo_r)` (just the `_r` subscript is missing)
+    * in the proof of Lemma 1 in the appendix, whach out for a variable renaming problem.
+      they reuse the variable name `k` to mean two different things. first, they use it 
+      as part of an inductive proof to say "assume it's true for `k-1`, and now let's show it for `k`".
+      but then later in the proof they say "Now, for all `1 <= k < j`..." and from then on `k` means 
+      something different.
+
 
 # 2020-07-03, paper discussion
 
