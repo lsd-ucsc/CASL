@@ -5,7 +5,7 @@ This is a GitHub repository for the CASL research group.  CASL is pronounced lik
   * Consistency-Aware Solvers and Languages
   * Coordination-Avoiding Systems Lab
   * Consistent and Available Systems Lab 😉
-  * Clever, Ambitious Systems and Languages
+  * Creative, Ambitious Systems and Languages
   * CASL Ain't a Systems Lab
   * Can't Allocate, Stack Limit
   * ...
