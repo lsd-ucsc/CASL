@@ -1,3 +1,34 @@
+## 2021-11-10, group meeting
+
+Lindsey Kuper, Simon Guo, Gan Shen, Nathan Liittschwager, Patrick Redmond
+
+* nathan: I've had a small insight about using LH for Causal Broadcast
+    * nathan: You can have a pair which represents a relation
+    * nathan: `type CausallyBeforeProp M1 M2`; I understand these expression
+      variables things now
+    * patrick: yay
+* lindsey: what about the safety and liveness as types idea?
+    * nathan: [presenting a pdf]
+    * nathan: taking the definition of the **Defining Liveness** paper and
+      thinking about how to put into LH
+    * lindsey: note the definition describes executions which don't happen; i
+      am unsure how to talk about what does happen; these negated definitions
+      are strange
+    * nathan: i rewrote these definitions as dependent types
+    * nathan: then i rewrote those dependent types as refinement types
+    * lindsey: alpha is a partial execution; we're saying, alpha is live iff
+      you could append any beta to it and get something that is still live
+    * nathan: what does it mean to exhibit a proof of [execution in property]
+    * lindsey: thank you for writing down your thoughts
+* gan: [presenting agda code about causality and vector clocks]
+    * gan: events are indexed by process id
+    * gan: events are like a list of all events in their history
+    * gan: [happens before constructors]
+    * gan: [vc and vc-less is the same] vc has init, tick, and merge
+    * lindsey: this way of setting things up makes the proof fall out; what's
+      left is to show a concrete implementation of a vector clock fits the
+      abstract vector clock
+
 ## 2021-03-19, group meeting (Peter Alvaro joining)
 
 * lindsey: wrote a doc about our ideas for next steps on casl https://docs.google.com/document/d/1WsKgBLqrxiCVmew860VrnlXeiYtLH2gRCzb7ag_yTwU/edit#
