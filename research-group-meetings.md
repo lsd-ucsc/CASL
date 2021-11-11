@@ -20,7 +20,7 @@ Lindsey Kuper, Simon Guo, Gan Shen, Nathan Liittschwager, Patrick Redmond
       you could append any beta to it and get something that is still live
     * nathan: what does it mean to exhibit a proof of [execution in property]
     * lindsey: thank you for writing down your thoughts
-* gan: [presenting agda code about causality and vector clocks](https://gist.github.com/gshen42/36d0571095df7a998b480d747e48f659)
+* gan: [presenting agda code about causality and vector clocks](https://github.com/gshen42/vc-hb-iso)
     * gan: events are indexed by process id
     * gan: events are like a list of all events in their history
     * gan: [happens before constructors]
