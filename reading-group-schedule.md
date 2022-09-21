@@ -27,7 +27,7 @@ Paper TBD
 
 Paper TBD
 
-* Week 3
+* Week 3 Tim Goodwin
 
 Paper TBD
 
@@ -43,7 +43,7 @@ Paper TBD
 
 Paper TBD
 
-* Week 7
+* Week 7 Tim Goodwin
 
 Paper TBD
 
