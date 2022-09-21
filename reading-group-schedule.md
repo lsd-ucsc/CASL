@@ -1,10 +1,6 @@
-# Summer 2020 CASL reading group
+# CASL reading group
 
-## What's all this, then?
-
-[CASL](README.md) is organizing a reading group this summer.  We'll meet on Fridays, 11:30am-12:30pm, each week of summer quarter, via Zoom (ask a CASL person to forward you the Zoom link if you need it).  All are welcome to participate.
-
-If you show up to reading group, be ready to participate in the discussion!  If more than 5 people attend, for the first part of the meeting we'll use Zoom breakout rooms to create smaller (3-4 person?) conversation groups to promote active discussion.  Then we'll reconvene as a full group to summarize the small-group discussions.
+If you show up to reading group, be ready to participate in the discussion!
 
 To structure our discussions, here are four questions I suggest we ask ourselves for each paper we read.  Note that, while all of them require reading some of the paper, none of them require reading all of the paper. (Lindsey got the idea to use this list of questions from Chung-chieh Shan.)
 
@@ -14,6 +10,56 @@ To structure our discussions, here are four questions I suggest we ask ourselves
 4. What's one step I can take towards answering the question?
 
 Some papers to consider might be available on the [CASL group resources](resources.md) list, but others are welcome too!
+
+# Fall 2022
+
+## Schedule of readings
+
+This list is tentative and subject to change.
+
+Everyone should claim two weeks and list the papers they want to discuss those weeks.  Try to pick papers that are relevant to the research problems you personally are interested in, but also that you hope will be relevant and approachable to the group at large!
+
+* Week 1
+
+Paper TBD
+
+* Week 2
+
+Paper TBD
+
+* Week 3
+
+Paper TBD
+
+* Week 4
+
+Paper TBD
+
+* Week 5
+
+Paper TBD
+
+* Week 6
+
+Paper TBD
+
+* Week 7
+
+Paper TBD
+
+* Week 8
+
+Paper TBD
+
+* Week 9
+
+Paper TBD
+
+* Week 10
+
+Paper TBD
+
+# Summer 2020
 
 ## Schedule of readings
 
