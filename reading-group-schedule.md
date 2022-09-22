@@ -24,11 +24,11 @@ Everyone should claim two weeks and list the papers they want to discuss those w
 | Week  1 | TBD  | TBD   |
 | Week  2 | Jonathan Castello | [LVars: lattice-based data structures for deterministic parallelism](https://dl.acm.org/doi/10.1145/2502323.2502326) |
 | Week  3 | Tim Goodwin | TBD |
-| Week  4 | TBD  | TBD   |
+| Week  4 | Gan Shen  | TBD   |
 | Week  5 | TBD  | TBD   |
 | Week  6 | Jonathan Castello | [The semantic foundations of concurrent constraint programming](https://dl.acm.org/doi/abs/10.1145/99583.99627) |
 | Week  7 | Tim Goodwin | TBD |
-| Week  8 | TBD  | TBD   |
+| Week  8 | Gan Shen  | TBD   |
 | Week  9 | TBD  | TBD   |
 | Week 10 | TBD  | TBD   |
 
