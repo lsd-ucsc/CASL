@@ -23,9 +23,9 @@ Everyone should claim two weeks and list the papers they want to discuss those w
 
 Paper TBD
 
-* Week 2
+* Week 2 Jonathan Castello
 
-Paper TBD
+[LVars: lattice-based data structures for deterministic parallelism](https://dl.acm.org/doi/10.1145/2502323.2502326)
 
 * Week 3 Tim Goodwin
 
@@ -39,9 +39,9 @@ Paper TBD
 
 Paper TBD
 
-* Week 6
+* Week 6 Jonathan Castello
 
-Paper TBD
+[The semantic foundations of concurrent constraint programming](https://dl.acm.org/doi/abs/10.1145/99583.99627)
 
 * Week 7 Tim Goodwin
 
