@@ -2,23 +2,31 @@ digraph G {
     node [shape=box];
     subgraph cluster0 {
         label="Extraction";
+        certA [label="certification\n\n(eg. type checking is\na prerequsite to both\ninterpret or extract)"];
+
         srcA [label="code and proofs"];
-        exeA [label="executable code"];
-        srcA -> exeA [label="extract"];
         dstA [label="machine instructions\n\"behavior\""];
-        exeA -> dstA [label="compile & run\lor interpret\l"];
-        certA [label="certification"];
-        srcA -> certA [label="verify\lproofs\l"];
-        certA -> exeA [weight=0,style=dotted,label="sometimes we think of\lcertification as a prerequisite\lto compilation\l(eg. type checking)\l"];
+        srcA -> dstA [color=blue,penwidth=2,label="interpret"];
+        exeA [label="executable code"];
+        srcA -> exeA [color=blue,penwidth=2,label="compile\l\l(\"extract\", when via\l a significant I.R.)\l"];
+        exeA -> dstA [color=blue,penwidth=2,label="run"];
+        srcA -> certA [color=red,penwidth=2,xlabel="verify\lproofs\l"];
     }
     subgraph cluster1 {
         label="Intraction";
         srcB [label="code"];
         dstB [label="machine instructions\n\"behavior\""];
-        srcB -> dstB [label="compile & run\lor interpret\l"];
-        srcB2 [label="verifiable code\nand proofs"];
-        srcB -> srcB2 [label="compile"];
+        srcB -> dstB [color=blue,penwidth=2,label="interpret"];
+        exeB [label="executable code"];
+        srcB -> exeB [color=blue,penwidth=2,label="compile"];
+        exeB -> dstB [color=blue,penwidth=2,label="run"];
+        srcB2 [label="verifiable code"];
+        srcB -> srcB2 [color=red,penwidth=2,xlabel="compile"];
         certB [label="certification"];
-        srcB2 -> certB [label="verify\lproofs\l"];
+        srcB2 -> verif:n [color=red,penwidth=2,arrowhead=none];
+        proof [label="proofs"];
+        proof -> verif:n [color=red,penwidth=2,arrowhead=none];
+        verif [shape=none,label="verify\lproofs\l"];
+        verif -> certB [color=red,penwidth=2];
     }
 }
