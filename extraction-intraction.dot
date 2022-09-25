@@ -2,31 +2,37 @@ digraph G {
     node [shape=box];
     subgraph cluster0 {
         label="Extraction";
-        certA [label="certification\n\n(eg. type checking is\na prerequsite to both\ninterpret or extract)"];
 
-        srcA [label="code and proofs"];
-        dstA [label="machine instructions\n\"behavior\""];
-        srcA -> dstA [color=blue,penwidth=2,label="interpret"];
+        srcA [label="source code"];
         exeA [label="executable code"];
-        srcA -> exeA [color=blue,penwidth=2,label="compile\l\l(\"extract\", when via\l a significant I.R.)\l"];
-        exeA -> dstA [color=blue,penwidth=2,label="run"];
-        srcA -> certA [color=red,penwidth=2,xlabel="verify\lproofs\l"];
+        dstA [label="machine instructions\n\"behavior\""];
+        //srcA -> dstA [color=blue,penwidth=2,label="interpret"];
+        srcA -> exeA [weight=2,color=blue,penwidth=2,label="compile\l(extract)\l"];
+        exeA -> dstA [weight=2,color=blue,penwidth=2,label="run"];
+
+        proofA [label="proofs"];
+        verifA [shape=none,label="verify\lproofs\l"];
+        srcA -> verifA:n [style=dashed,color=red,penwidth=2,arrowhead=none];
+        proofA -> verifA:n [color=red,penwidth=2,arrowhead=none];
+        certA [label="certification"];
+        verifA -> certA [weight=2,color=red,penwidth=2];
     }
     subgraph cluster1 {
         label="Intraction";
-        srcB [label="code"];
-        dstB [label="machine instructions\n\"behavior\""];
-        srcB -> dstB [color=blue,penwidth=2,label="interpret"];
+        srcB [label="source code"];
         exeB [label="executable code"];
-        srcB -> exeB [color=blue,penwidth=2,label="compile"];
-        exeB -> dstB [color=blue,penwidth=2,label="run"];
-        srcB2 [label="verifiable code"];
-        srcB -> srcB2 [color=red,penwidth=2,xlabel="compile"];
+        dstB [label="machine instructions\n\"behavior\""];
+        //srcB -> dstB [color=blue,penwidth=2,label="interpret"];
+        srcB -> exeB [weight=2,color=blue,penwidth=2,label="compile"];
+        exeB -> dstB [weight=2,color=blue,penwidth=2,label="run"];
+
+        src2B [label="verifiable code"];
+        srcB -> src2B [style=dashed,color=red,penwidth=2,xlabel="compile"];
+        proofB [label="proofs"];
+        verifB [shape=none,label="verify\lproofs\l"];
+        src2B -> verifB:n [style=dashed,weight=2,color=red,penwidth=2,arrowhead=none];
+        proofB -> verifB:n [weight=4,color=red,penwidth=2,arrowhead=none];
+        verifB -> certB [weight=4,color=red,penwidth=2];
         certB [label="certification"];
-        srcB2 -> verif:n [color=red,penwidth=2,arrowhead=none];
-        proof [label="proofs"];
-        proof -> verif:n [color=red,penwidth=2,arrowhead=none];
-        verif [shape=none,label="verify\lproofs\l"];
-        verif -> certB [color=red,penwidth=2];
     }
 }
