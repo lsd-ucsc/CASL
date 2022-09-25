@@ -3,18 +3,20 @@ digraph G {
     subgraph cluster0 {
         label="Extraction";
         srcA [label="code and proofs"];
+        exeA [label="executable code"];
+        srcA -> exeA [label="extract"];
         dstA [label="machine instructions\n\"behavior\""];
-        srcA -> dstA [weight=2,label="compile & run\lor\linterpret\l"];
+        exeA -> dstA [label="compile & run\lor interpret\l"];
         certA [label="certification"];
         srcA -> certA [label="verify\lproofs\l"];
-        certA -> dstA [style=dotted,label="sometimes we think of\lcertification as a prerequisite\lto compilation\l(eg. type checking)\l"];
+        certA -> exeA [weight=0,style=dotted,label="sometimes we think of\lcertification as a prerequisite\lto compilation\l(eg. type checking)\l"];
     }
     subgraph cluster1 {
         label="Intraction";
         srcB [label="code"];
         dstB [label="machine instructions\n\"behavior\""];
-        srcB -> dstB [label="compile & run\lor\linterpret\l"];
-        srcB2 [label="different code\nand proofs"];
+        srcB -> dstB [label="compile & run\lor interpret\l"];
+        srcB2 [label="verifiable code\nand proofs"];
         srcB -> srcB2 [label="compile"];
         certB [label="certification"];
         srcB2 -> certB [label="verify\lproofs\l"];
