@@ -21,7 +21,7 @@ Everyone should claim two weeks and list the papers they want to discuss those w
 
 | Week    | Lead | Paper |
 | :------ | :--- | :---- |
-| Week  1 | Patrick Redmond | [Listlessness is Better than Laziness, Lazy evaluation and garbage collection at compile-time - Philip Wadlcr](/user_uploads/37137/UcJw_gWXpn0LMlUI6dxKDfZX/800055.802020.pdf) (zulip link) |
+| Week  1 | Patrick Redmond | [Listlessness is Better than Laziness, Lazy evaluation and garbage collection at compile-time - Philip Wadler](/user_uploads/37137/UcJw_gWXpn0LMlUI6dxKDfZX/800055.802020.pdf) (zulip link) |
 | Week  2 | Jonathan Castello | [LVars: lattice-based data structures for deterministic parallelism](https://dl.acm.org/doi/10.1145/2502323.2502326) |
 | Week  3 | Tim Goodwin | TBD |
 | Week  4 | Gan Shen  | TBD   |
