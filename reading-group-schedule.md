@@ -21,11 +21,11 @@ Everyone should claim two weeks and list the papers they want to discuss those w
 
 | Week    | Lead | Paper |
 | :------ | :--- | :---- |
-| Week  1 | Patrick Redmond | [Listlessness is Better than Laziness, Lazy evaluation and garbage collection at compile-time - Philip Wadler](/user_uploads/37137/UcJw_gWXpn0LMlUI6dxKDfZX/800055.802020.pdf) (zulip link) |
+| Week  1 | Patrick Redmond | [Listlessness is Better than Laziness, Lazy evaluation and garbage collection at compile-time - Philip Wadler](https://dl.acm.org/doi/pdf/10.1145/800055.802020) |
 | Week  2 | Jonathan Castello | [LVars: lattice-based data structures for deterministic parallelism](https://dl.acm.org/doi/10.1145/2502323.2502326) |
 | Week  3 | Tim Goodwin | TBD |
 | Week  4 | Gan Shen  | TBD   |
-| Week  5 | Patrick Redmond | [The Chalmers Lazy ML Compiler - L. Augustsson and T. Johnsson.pdf](/user_uploads/37137/Xy7uv89qGzFVKh3WLDTdcjba/The-Chalmers-Lazy-ML-Compiler-L-Augustsson-and-T-Johnsson.pdf) (zulip link) |
+| Week  5 | Patrick Redmond | [A New  Implementation Technique for Applicative Languages - D. A. Turner](https://onlinelibrary.wiley.com/doi/pdf/10.1002/spe.4380090105) |
 | Week  6 | Jonathan Castello | [The semantic foundations of concurrent constraint programming](https://dl.acm.org/doi/abs/10.1145/99583.99627) |
 | Week  7 | Tim Goodwin | TBD |
 | Week  8 | Gan Shen  | TBD   |
