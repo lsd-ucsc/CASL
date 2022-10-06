@@ -23,7 +23,7 @@ Everyone should claim two weeks and list the papers they want to discuss those w
 | :------ | :--- | :---- |
 | Week  1 | Patrick Redmond | [Listlessness is Better than Laziness, Lazy evaluation and garbage collection at compile-time - Philip Wadler](https://dl.acm.org/doi/pdf/10.1145/800055.802020) |
 | Week  2 | Jonathan Castello | [LVars: lattice-based data structures for deterministic parallelism](https://dl.acm.org/doi/10.1145/2502323.2502326) |
-| Week  3 | Tim Goodwin | TBD |
+| Week  3 | Tim Goodwin | [ Naiad: A Timely Dataflow System ](https://www.microsoft.com/en-us/research/wp-content/uploads/2013/11/naiad_sosp2013.pdf) |
 | Week  4 | Gan Shen  | TBD   |
 | Week  5 | Patrick Redmond | [A New  Implementation Technique for Applicative Languages - D. A. Turner](https://onlinelibrary.wiley.com/doi/pdf/10.1002/spe.4380090105) |
 | Week  6 | Jonathan Castello | [The semantic foundations of concurrent constraint programming](https://dl.acm.org/doi/abs/10.1145/99583.99627) |
