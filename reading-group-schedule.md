@@ -25,7 +25,7 @@ Everyone should claim two weeks and list the papers they want to discuss those w
 | Week  2 | Jonathan Castello | [LVars: lattice-based data structures for deterministic parallelism](https://dl.acm.org/doi/10.1145/2502323.2502326) |
 | Week  3 | Tim Goodwin | [ Naiad: A Timely Dataflow System ](https://www.microsoft.com/en-us/research/wp-content/uploads/2013/11/naiad_sosp2013.pdf) |
 | Week  4 | Gan Shen  | [Fantastic Morphisms and Where to Find Them: A Guide to Recursion Schemes](https://arxiv.org/pdf/2202.13633.pdf)  |
-| Week  5 | Patrick Redmond | *A New  Implementation Technique for Applicative Languages* - D. A. Turner, [doi link](https://onlinelibrary.wiley.com/doi/pdf/10.1002/spe.4380090105), [pdf link](https://archive.alvb.in/msc/05_infomcco/reading/SKI-combinators.pdf), [searchable pdf (first page corrupted)](https://courses.grainger.illinois.edu/cs421/sp2011/project/turner-implementation.pdf) |
+| Week  5 | Patrick Redmond | *A New  Implementation Technique for Applicative Languages* - D. A. Turner, [PDF](https://archive.alvb.in/msc/05_infomcco/reading/SKI-combinators.pdf), [Searchable PDF (page 1 corrupted)](https://courses.grainger.illinois.edu/cs421/sp2011/project/turner-implementation.pdf), [DOI](https://onlinelibrary.wiley.com/doi/pdf/10.1002/spe.4380090105) |
 | Week  6 | Jonathan Castello | [The semantic foundations of concurrent constraint programming](https://dl.acm.org/doi/abs/10.1145/99583.99627) |
 | Week  7 | Tim Goodwin | TBD |
 | Week  8 | Gan Shen  | TBD   |
