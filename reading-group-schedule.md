@@ -27,7 +27,7 @@ Everyone should claim two weeks and list the papers they want to discuss those w
 | Week  4 | Gan Shen  | [Fantastic Morphisms and Where to Find Them: A Guide to Recursion Schemes](https://arxiv.org/pdf/2202.13633.pdf)  |
 | Week  5 | Patrick Redmond | *A New  Implementation Technique for Applicative Languages* - D. A. Turner, [Full PDF](https://archive.alvb.in/msc/05_infomcco/reading/SKI-combinators.pdf), [Searchable PDF (page 1 corrupted)](https://courses.grainger.illinois.edu/cs421/sp2011/project/turner-implementation.pdf), [DOI](https://onlinelibrary.wiley.com/doi/pdf/10.1002/spe.4380090105) |
 | Week  6 | Jonathan Castello | [The semantic foundations of concurrent constraint programming](https://dl.acm.org/doi/abs/10.1145/99583.99627) |
-| Week  7 | Tim Goodwin | [Pivot Tracing: Dynamic Causal Monitoring for Distributed Systems](https://sigops.org/s/conferences/sosp/2015/current/2015-Monterey/printable/122-mace.pdf) |
+| Week  7 | Tim Goodwin | [Using Lightweight Formal Methods to Validate a Key-Value Storage Node in Amazon S3](https://assets.amazon.science/07/6c/81bfc2c243249a8b8b65cc2135e4/using-lightweight-formal-methods-to-validate-a-key-value-storage-node-in-amazon-s3.pdf) |
 | Week  8 | Gan Shen  | TBD   |
 | Week  9 | TBD  | TBD   |
 | Week 10 | TBD  | TBD   |
