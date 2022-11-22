@@ -29,8 +29,9 @@ Everyone should claim two weeks and list the papers they want to discuss those w
 | Week  6 | Jonathan Castello | [The semantic foundations of concurrent constraint programming](https://dl.acm.org/doi/abs/10.1145/99583.99627) |
 | Week  7 | Tim Goodwin | [Using Lightweight Formal Methods to Validate a Key-Value Storage Node in Amazon S3](https://assets.amazon.science/07/6c/81bfc2c243249a8b8b65cc2135e4/using-lightweight-formal-methods-to-validate-a-key-value-storage-node-in-amazon-s3.pdf) |
 | Week  8 | Gan Shen  | [Pirouette: higher-order typed functional choreographies](https://dl.acm.org/doi/10.1145/3498684)   |
-| Week  9 | Nathan  | TBD   |
-| Week 10 | Nathan  | TBD   |
+| Week  9 | Thanksgiving (no meeting)  |
+| Week 10 | Nathan  | TBD  |
+| Finals week | Nathan | TBD |
 
 
 # Summer 2020
