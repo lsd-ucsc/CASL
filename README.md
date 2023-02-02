@@ -7,6 +7,7 @@ This is a GitHub repository for the CASL research group.  CASL is pronounced lik
   * Consistent and Available Systems Lab 😉
   * Creative, Ambitious Systems and Languages
   * CASL Ain't a Systems Lab
+  * Curses! Another Separation Logic! and/or CAusal Separation Logic
   * Can't Allocate, Stack Limit
   * ...
 
